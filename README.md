@@ -9,3 +9,8 @@ More details about performance metrics can be found under the following link:
 Repository structure
 --------------------
 Test configuration and results can be found in directories in this repository. The number in the directory name presents the number of test execution.
+
+Git LFS
+-------
+
+Some of the files in this repository are too large for GitHub to manage directly, so it manages it  through Git LFS. See the instructions in this [tutorial](https://www.atlassian.com/git/tutorials/git-lfs) to install LFS in order to work with these files.
