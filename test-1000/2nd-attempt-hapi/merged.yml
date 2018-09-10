@@ -1,0 +1,120 @@
+---
+execution:
+- concurrency: ${__P(scenario-concurrency)}
+  iterations: ${__P(scenario-iterations)}
+  scenario: location-update
+- concurrency: ${__P(scenario-concurrency)}
+  iterations: ${__P(scenario-iterations)}
+  scenario: location-search-all
+modules:
+  jmeter:
+    properties:
+      fhir-server-url: http://localhost/hapifhir/baseDstu3/Location
+      scenario-concurrency: 1
+      scenario-iterations: 1000
+    xml-jtl-flags:
+      responseData: true
+  local:
+    sequential: true
+reporting:
+- module: final-stats
+- criteria:
+  - failures>0%, stop as failed
+  module: passfail
+scenarios:
+  location-create:
+    requests:
+    - body: ${location}
+      extract-regexp:
+        location_id:
+          default: NOT_FOUND
+          match-no: 1
+          regexp: Location\/(.+?)\/
+          scope: null
+          subject: headers
+          template: 1
+      headers:
+        Content-Type: application/json
+      jsr223:
+        execute: before
+        script-text: |
+          import groovy.json.JsonSlurper
+          import groovy.json.JsonOutput
+
+          def jsonSlurper = new JsonSlurper()
+          def random = new Random()
+          def identifierValue = UUID.randomUUID().toString()
+
+          def location = [
+            resourceType: "Location",
+            alias: [ "N007" ],
+            identifier: [
+              [ system: "urn:ietf:rfc:3986", value: "https://test.openlmis.org/api/programs/418bdc1d-c303-4bd0-b2d3-d8901150a983" ],
+              [ system: "urn:ietf:rfc:3986", value: "https://test.openlmis.org/api/facilityTypes/ac1d268b-ce10-455f-bf87-9c667da8f060" ],
+              [ system: "urn:ietf:rfc:3986", value: "https://test.openlmis.org/api/facilityOperators/9456c3e9-c4a6-4a28-9e08-47ceb16a4121" ],
+              [ system: "https://test.openlmis.org", value: identifierValue ]
+            ],
+            name: "Lurio, Cuamba",
+            position: [
+              longitude: 36.852509,
+              latitude: -14.78975
+            ],
+            physicalType: [
+              coding: [
+                [ system: "http://hl7.org/fhir/location-physical-type", code: "si", display: "Site" ]
+              ]
+            ],
+            partOf: [
+              reference: "https://test.openlmis.org/api/Location/9b8cfb5a-217a-4261-a64f-16ca06ae79fa"
+            ],
+            status: "active"
+          ]
+
+          vars.put("location", JsonOutput.toJson(location))
+          vars.put("identifier_value", identifierValue)
+      label: CreateLocation
+      method: POST
+      url: ${__P(fhir-server-url)}
+  location-get-single:
+    requests:
+    - headers:
+        Accept: application/json
+      label: GetSingleLocation
+      method: GET
+      url: ${__P(fhir-server-url)}/${location_id}
+  location-search-all:
+    requests:
+    - label: SearchLocation
+      method: GET
+      url: ${__P(fhir-server-url)}
+  location-search-by-identifier:
+    requests:
+    - label: SearchLocationByIdentifier
+      method: GET
+      url: ${__P(fhir-server-url)}?identifier=https://test.openlmis.org%7C${identifier_value}
+  location-update:
+    requests:
+    - include-scenario: location-create
+    - include-scenario: location-search-by-identifier
+    - include-scenario: location-get-single
+    - body: ${location}
+      headers:
+        Content-Type: application/json
+      jsr223:
+        execute: before
+        script-text: |
+          import groovy.json.JsonSlurper
+          import groovy.json.JsonOutput
+
+          def response = prev.getResponseDataAsString()
+          def jsonSlurper = new JsonSlurper()
+          def location = jsonSlurper.parseText(response)
+
+          location.name = "Lurio, Cuamba (Updated)"
+          location.remove("meta")
+
+          vars.put("location", JsonOutput.toJson(location))
+      label: UpdateLocation
+      method: PUT
+      url: ${__P(fhir-server-url)}/${location_id}
+

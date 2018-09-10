@@ -1,0 +1,167 @@
+{
+ "scenarios": {
+  "location-create": {
+   "requests": [
+    {
+     "body": "${location}", 
+     "url": "${__P(fhir-server-url)}", 
+     "jsr223": {
+      "script-text": "import groovy.json.JsonSlurper\nimport groovy.json.JsonOutput\n\ndef jsonSlurper = new JsonSlurper()\ndef random = new Random()\ndef identifierValue = UUID.randomUUID().toString()\n\ndef location = [\n  resourceType: \"Location\",\n  alias: [ \"N00\" + random.nextInt(1000000) ],\n  identifier: [\n    [ system: \"urn:ietf:rfc:3986\", value: \"https://test.openlmis.org/api/programs/418bdc1d-c303-4bd0-b2d3-d8901150a983\" ],\n    [ system: \"urn:ietf:rfc:3986\", value: \"https://test.openlmis.org/api/facilityTypes/ac1d268b-ce10-455f-bf87-9c667da8f060\" ],\n    [ system: \"urn:ietf:rfc:3986\", value: \"https://test.openlmis.org/api/facilityOperators/9456c3e9-c4a6-4a28-9e08-47ceb16a4121\" ],\n    [ system: \"https://test.openlmis.org\", value: identifierValue ]\n  ],\n  name: \"Lurio, Cuamba\",\n  position: [\n    longitude: 36.852509,\n    latitude: -14.78975\n  ],\n  physicalType: [\n    coding: [\n      [ system: \"http://hl7.org/fhir/location-physical-type\", code: \"si\", display: \"Site\" ]\n    ]\n  ],\n  partOf: [\n    reference: \"https://test.openlmis.org/api/Location/9b8cfb5a-217a-4261-a64f-16ca06ae79fa\"\n  ],\n  status: \"active\"\n]\n\nvars.put(\"location\", JsonOutput.toJson(location))\nvars.put(\"identifier_value\", identifierValue)\n", 
+      "execute": "before"
+     }, 
+     "extract-regexp": {
+      "location_id": {
+       "default": "NOT_FOUND", 
+       "match-no": 1, 
+       "template": 1, 
+       "scope": null, 
+       "regexp": "Location\\/(.+?)\\/", 
+       "subject": "headers"
+      }
+     }, 
+     "label": "CreateLocation", 
+     "headers": {
+      "Content-Type": "application/json"
+     }, 
+     "method": "POST"
+    }
+   ]
+  }, 
+  "location-search-all": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}", 
+     "method": "GET", 
+     "label": "SearchLocation"
+    }
+   ]
+  }, 
+  "location-search-by-identifier": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}?identifier=https://test.openlmis.org%7C${identifier_value}", 
+     "method": "GET", 
+     "label": "SearchLocationByIdentifier"
+    }
+   ]
+  }, 
+  "location-search-by-partOf": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}?partof=https://test.openlmis.org/api/Location/9b8cfb5a-217a-4261-a64f-16ca06ae79fa", 
+     "method": "GET", 
+     "label": "SearchLocationByPartOf"
+    }
+   ]
+  }, 
+  "location-get-single": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}/${location_id}", 
+     "headers": {
+      "Accept": "application/json"
+     }, 
+     "method": "GET", 
+     "label": "GetSingleLocation"
+    }
+   ]
+  }, 
+  "location-update": {
+   "requests": [
+    {
+     "include-scenario": "location-create"
+    }, 
+    {
+     "include-scenario": "location-search-by-identifier"
+    }, 
+    {
+     "include-scenario": "location-get-single"
+    }, 
+    {
+     "body": "${location}", 
+     "url": "${__P(fhir-server-url)}/${location_id}", 
+     "jsr223": {
+      "script-text": "import groovy.json.JsonSlurper\nimport groovy.json.JsonOutput\n\ndef response = prev.getResponseDataAsString()\ndef jsonSlurper = new JsonSlurper()\ndef location = jsonSlurper.parseText(response)\n\nlocation.name = \"Lurio, Cuamba (Updated)\"\nlocation.remove(\"meta\")\n\nvars.put(\"location\", JsonOutput.toJson(location))\n", 
+      "execute": "before"
+     }, 
+     "label": "UpdateLocation", 
+     "headers": {
+      "Content-Type": "application/json"
+     }, 
+     "method": "PUT"
+    }
+   ]
+  }, 
+  "location-search-by-name": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}?name:contains=Lurio", 
+     "method": "GET", 
+     "label": "SearchLocationByName"
+    }
+   ]
+  }, 
+  "location-search-by-status": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}?status:exact=active", 
+     "method": "GET", 
+     "label": "SearchLocationByStatus"
+    }
+   ]
+  }
+ }, 
+ "execution": [
+  {
+   "scenario": "location-update", 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": "${__P(scenario-concurrency)}"
+  }, 
+  {
+   "scenario": "location-search-all", 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": "${__P(scenario-concurrency)}"
+  }, 
+  {
+   "scenario": "location-search-by-name", 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": "${__P(scenario-concurrency)}"
+  }, 
+  {
+   "scenario": "location-search-by-partOf", 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": "${__P(scenario-concurrency)}"
+  }, 
+  {
+   "scenario": "location-search-by-status", 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": "${__P(scenario-concurrency)}"
+  }
+ ], 
+ "modules": {
+  "jmeter": {
+   "xml-jtl-flags": {
+    "responseData": true
+   }, 
+   "properties": {
+    "scenario-iterations": 10000, 
+    "scenario-concurrency": 1, 
+    "fhir-server-url": "http://localhost/hapifhir/baseDstu3/Location"
+   }
+  }, 
+  "local": {
+   "sequential": true
+  }
+ }, 
+ "reporting": [
+  {
+   "module": "final-stats"
+  }, 
+  {
+   "module": "passfail", 
+   "criteria": [
+    "failures>0%, stop as failed"
+   ]
+  }
+ ]
+}

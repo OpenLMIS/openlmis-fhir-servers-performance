@@ -1,0 +1,490 @@
+{
+ "cli-aliases": {
+  "gui": {
+   "modules": {
+    "jmeter": {
+     "gui": true
+    }
+   }
+  }, 
+  "lint": {
+   "cli": {
+    "linter": {
+     "lint-and-exit": true
+    }
+   }
+  }, 
+  "locations": {
+   "modules": {
+    "cloud": {
+     "dump-locations": true
+    }
+   }, 
+   "provisioning": "cloud"
+  }, 
+  "report": {
+   "reporting": [
+    "blazemeter"
+   ]
+  }, 
+  "sequential": {
+   "modules": {
+    "local": {
+     "sequential": true
+    }
+   }
+  }, 
+  "func": {
+   "modules": {
+    "console": {
+     "disable": true
+    }
+   }, 
+   "settings": {
+    "aggregator": "functional-consolidator"
+   }
+  }, 
+  "nolint": {
+   "cli": {
+    "linter": {
+     "disable": true
+    }
+   }
+  }, 
+  "install-tools": {
+   "services": [
+    "install-checker"
+   ]
+  }, 
+  "detach": {
+   "modules": {
+    "cloud": {
+     "detach": true
+    }
+   }
+  }, 
+  "local": {
+   "provisioning": "local"
+  }, 
+  "public": {
+   "modules": {
+    "blazemeter": {
+     "public-report": true
+    }
+   }
+  }, 
+  "cloud": {
+   "provisioning": "cloud"
+  }
+ }, 
+ "cli": {
+  "linter": {
+   "lint-and-exit": false, 
+   "warn-on-unfamiliar-fields": false, 
+   "disable": false, 
+   "ignored-warnings": []
+  }
+ }, 
+ "settings": {
+  "aggregator": "consolidator", 
+  "env": {
+   "TAURUS_ARTIFACTS_DIR": "/tmp/artifacts", 
+   "OBJC_DISABLE_INITIALIZE_FORK_SAFETY": "YES"
+  }, 
+  "artifacts-dir": "/tmp/artifacts", 
+  "default-executor": "jmeter"
+ }, 
+ "reporting": [
+  {
+   "module": "final-stats"
+  }, 
+  {
+   "module": "console"
+  }, 
+  {
+   "module": "final-stats", 
+   "dump-xml": "/tmp/artifacts/stats.xml"
+  }, 
+  {
+   "module": "passfail", 
+   "criteria": [
+    {
+     "timeframe": 0, 
+     "stop": true, 
+     "label": "", 
+     "threshold": "0%", 
+     "logic": "for", 
+     "fail": true, 
+     "message": null, 
+     "condition": ">", 
+     "subject": "failures"
+    }
+   ]
+  }
+ ], 
+ "modules": {
+  "appium": {
+   "class": "bzt.modules.services.AppiumLoader"
+  }, 
+  "ab": {
+   "class": "bzt.modules.ab.ApacheBenchmarkExecutor"
+  }, 
+  "proxy2jmx": {
+   "class": "bzt.modules.proxy2jmx.Proxy2JMX"
+  }, 
+  "mocha": {
+   "class": "bzt.modules.javascript.MochaTester"
+  }, 
+  "blazemeter": {
+   "class": "bzt.modules.blazemeter.BlazeMeterUploader"
+  }, 
+  "external-results-loader": {
+   "class": "bzt.modules.external.ExternalResultsLoader"
+  }, 
+  "testng": {
+   "class": "bzt.modules.java.TestNGTester"
+  }, 
+  "cloud": {
+   "class": "bzt.modules.blazemeter.CloudProvisioning", 
+   "default-location": "us-central1-a"
+  }, 
+  "install-checker": {
+   "class": "bzt.modules.services.InstallChecker"
+  }, 
+  "monitoring": {
+   "class": "bzt.modules.monitoring.Monitoring"
+  }, 
+  "gatling": {
+   "class": "bzt.modules.gatling.GatlingExecutor", 
+   "properties": {
+    "gatling.data.file.bufferSize": 256
+   }
+  }, 
+  "grinder": {
+   "class": "bzt.modules.grinder.GrinderExecutor", 
+   "properties": {
+    "grinder.useConsole": false
+   }
+  }, 
+  "selenium": {
+   "class": "bzt.modules.selenium.SeleniumExecutor"
+  }, 
+  "tsung": {
+   "class": "bzt.modules.tsung.TsungExecutor"
+  }, 
+  "pytest": {
+   "class": "bzt.modules.python.PyTestExecutor"
+  }, 
+  "capturehar": {
+   "class": "bzt.modules.blazemeter.ServiceStubCaptureHAR"
+  }, 
+  "virtual-display": {
+   "class": "bzt.modules.services.VirtualDisplay"
+  }, 
+  "shellexec": {
+   "class": "bzt.modules.shellexec.ShellExecutor"
+  }, 
+  "junit": {
+   "class": "bzt.modules.java.JUnitTester"
+  }, 
+  "nunit": {
+   "class": "bzt.modules.csharp.NUnitExecutor"
+  }, 
+  "siege": {
+   "class": "bzt.modules.siege.SiegeExecutor"
+  }, 
+  "rspec": {
+   "class": "bzt.modules.ruby.RSpecTester"
+  }, 
+  "newman": {
+   "class": "bzt.modules.javascript.NewmanExecutor"
+  }, 
+  "final-stats": {
+   "class": "bzt.modules.reporting.FinalStatus"
+  }, 
+  "wdio": {
+   "class": "bzt.modules.javascript.WebdriverIOExecutor"
+  }, 
+  "pbench": {
+   "class": "bzt.modules.pbench.PBenchExecutor", 
+   "enhanced": true
+  }, 
+  "console": {
+   "class": "bzt.modules.console.ConsoleStatusReporter"
+  }, 
+  "android-emulator": {
+   "class": "bzt.modules.services.AndroidEmulatorLoader"
+  }, 
+  "final_stats": {
+   "class": "bzt.modules.reporting.FinalStatus"
+  }, 
+  "functional-consolidator": {
+   "class": "bzt.modules.functional.FunctionalAggregator"
+  }, 
+  "jmeter": {
+   "plugins": [
+    "jpgc-casutg", 
+    "jpgc-dummy", 
+    "jpgc-ffw", 
+    "jpgc-fifo", 
+    "jpgc-functions", 
+    "jpgc-json", 
+    "jpgc-perfmon", 
+    "jpgc-prmctl", 
+    "jpgc-tst"
+   ], 
+   "properties": {
+    "jmeter.save.saveservice.autoflush": "true", 
+    "jmeter.save.saveservice.connect_time": "true", 
+    "scenario-iterations": 10000, 
+    "scenario-concurrency": 1, 
+    "summariser.name": "", 
+    "fhir-server-url": "http://localhost/fhir/Location", 
+    "jmeterengine.force.system.exit": "true"
+   }, 
+   "system-properties": {
+    "sun.net.inetaddr.ttl": 0
+   }, 
+   "version": "4.0", 
+   "path": "/root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh", 
+   "xml-jtl-flags": {
+    "responseData": true
+   }, 
+   "class": "bzt.modules.jmeter.JMeterExecutor", 
+   "protocol-handlers": {
+    "http": "bzt.jmx.http.HTTPProtocolHandler"
+   }
+  }, 
+  "apiritif": {
+   "class": "bzt.modules.python.ApiritifNoseExecutor"
+  }, 
+  "local": {
+   "sequential": true, 
+   "class": "bzt.modules.provisioning.Local"
+  }, 
+  "locust": {
+   "class": "bzt.modules.locustio.LocustIOExecutor"
+  }, 
+  "robot": {
+   "class": "bzt.modules.python.RobotExecutor"
+  }, 
+  "screenshoter": {
+   "class": "bzt.modules.blazemeter.ServiceStubScreenshoter"
+  }, 
+  "passfail": {
+   "class": "bzt.modules.passfail.PassFailStatus"
+  }, 
+  "nose": {
+   "class": "bzt.modules.python.ApiritifNoseExecutor"
+  }, 
+  "molotov": {
+   "class": "bzt.modules.molotov.MolotovExecutor"
+  }, 
+  "consolidator": {
+   "percentiles": [
+    0, 
+    50, 
+    90, 
+    95, 
+    99, 
+    99.9, 
+    100
+   ], 
+   "class": "bzt.modules.aggregator.ConsolidatingAggregator"
+  }, 
+  "unpacker": {
+   "class": "bzt.modules.services.Unpacker"
+  }, 
+  "junit-xml": {
+   "class": "bzt.modules.reporting.JUnitXMLReporter"
+  }
+ }, 
+ "provisioning": "local", 
+ "scenarios": {
+  "location-create": {
+   "requests": [
+    {
+     "body": "${location}", 
+     "url": "${__P(fhir-server-url)}", 
+     "jsr223": {
+      "script-text": "import groovy.json.JsonSlurper\nimport groovy.json.JsonOutput\n\ndef jsonSlurper = new JsonSlurper()\ndef random = new Random()\ndef identifierValue = UUID.randomUUID().toString()\n\ndef location = [\n  resourceType: \"Location\",\n  alias: [ \"N00\" + random.nextInt(1000000) ],\n  identifier: [\n    [ system: \"urn:ietf:rfc:3986\", value: \"https://test.openlmis.org/api/programs/418bdc1d-c303-4bd0-b2d3-d8901150a983\" ],\n    [ system: \"urn:ietf:rfc:3986\", value: \"https://test.openlmis.org/api/facilityTypes/ac1d268b-ce10-455f-bf87-9c667da8f060\" ],\n    [ system: \"urn:ietf:rfc:3986\", value: \"https://test.openlmis.org/api/facilityOperators/9456c3e9-c4a6-4a28-9e08-47ceb16a4121\" ],\n    [ system: \"https://test.openlmis.org\", value: identifierValue ]\n  ],\n  name: \"Lurio, Cuamba\",\n  position: [\n    longitude: 36.852509,\n    latitude: -14.78975\n  ],\n  physicalType: [\n    coding: [\n      [ system: \"http://hl7.org/fhir/location-physical-type\", code: \"si\", display: \"Site\" ]\n    ]\n  ],\n  partOf: [\n    reference: \"https://test.openlmis.org/api/Location/9b8cfb5a-217a-4261-a64f-16ca06ae79fa\"\n  ],\n  status: \"active\"\n]\n\nvars.put(\"location\", JsonOutput.toJson(location))\nvars.put(\"identifier_value\", identifierValue)\n", 
+      "execute": "before"
+     }, 
+     "extract-regexp": {
+      "location_id": {
+       "default": "NOT_FOUND", 
+       "match-no": 1, 
+       "template": 1, 
+       "scope": null, 
+       "regexp": "Location\\/(.+?)\\/", 
+       "subject": "headers"
+      }
+     }, 
+     "label": "CreateLocation", 
+     "headers": {
+      "Content-Type": "application/json"
+     }, 
+     "method": "POST"
+    }
+   ]
+  }, 
+  "location-search-all": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}", 
+     "method": "GET", 
+     "label": "SearchLocation"
+    }
+   ]
+  }, 
+  "location-search-by-identifier": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}?identifier=https://test.openlmis.org%7C${identifier_value}", 
+     "method": "GET", 
+     "label": "SearchLocationByIdentifier"
+    }
+   ]
+  }, 
+  "location-search-by-partOf": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}?partof=https://test.openlmis.org/api/Location/9b8cfb5a-217a-4261-a64f-16ca06ae79fa", 
+     "method": "GET", 
+     "label": "SearchLocationByPartOf"
+    }
+   ]
+  }, 
+  "location-get-single": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}/${location_id}", 
+     "headers": {
+      "Accept": "application/json"
+     }, 
+     "method": "GET", 
+     "label": "GetSingleLocation"
+    }
+   ]
+  }, 
+  "location-update": {
+   "requests": [
+    {
+     "include-scenario": "location-create"
+    }, 
+    {
+     "include-scenario": "location-search-by-identifier"
+    }, 
+    {
+     "include-scenario": "location-get-single"
+    }, 
+    {
+     "body": "${location}", 
+     "url": "${__P(fhir-server-url)}/${location_id}", 
+     "jsr223": {
+      "script-text": "import groovy.json.JsonSlurper\nimport groovy.json.JsonOutput\n\ndef response = prev.getResponseDataAsString()\ndef jsonSlurper = new JsonSlurper()\ndef location = jsonSlurper.parseText(response)\n\nlocation.name = \"Lurio, Cuamba (Updated)\"\nlocation.remove(\"meta\")\n\nvars.put(\"location\", JsonOutput.toJson(location))\n", 
+      "execute": "before"
+     }, 
+     "label": "UpdateLocation", 
+     "headers": {
+      "Content-Type": "application/json"
+     }, 
+     "method": "PUT"
+    }
+   ]
+  }, 
+  "location-search-by-name": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}?name:contains=Lurio", 
+     "method": "GET", 
+     "label": "SearchLocationByName"
+    }
+   ]
+  }, 
+  "location-search-by-status": {
+   "requests": [
+    {
+     "url": "${__P(fhir-server-url)}?status:exact=active", 
+     "method": "GET", 
+     "label": "SearchLocationByStatus"
+    }
+   ]
+  }
+ }, 
+ "version": "1.13.0", 
+ "included-configs": [], 
+ "install-id": "Docker", 
+ "services": [
+  {
+   "local": [
+    {
+     "metrics": [
+      "cpu", 
+      "mem", 
+      "bytes-sent", 
+      "bytes-recv", 
+      "disk-read", 
+      "disk-write", 
+      "disk-space", 
+      "engine-loop", 
+      "conn-all"
+     ]
+    }
+   ], 
+   "module": "monitoring"
+  }
+ ], 
+ "execution": [
+  {
+   "scenario": "location-update", 
+   "throughput": {
+    "local": null
+   }, 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": {
+    "local": "${__P(scenario-concurrency)}"
+   }
+  }, 
+  {
+   "scenario": "location-search-all", 
+   "throughput": {
+    "local": null
+   }, 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": {
+    "local": "${__P(scenario-concurrency)}"
+   }
+  }, 
+  {
+   "scenario": "location-search-by-name", 
+   "throughput": {
+    "local": null
+   }, 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": {
+    "local": "${__P(scenario-concurrency)}"
+   }
+  }, 
+  {
+   "scenario": "location-search-by-partOf", 
+   "throughput": {
+    "local": null
+   }, 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": {
+    "local": "${__P(scenario-concurrency)}"
+   }
+  }, 
+  {
+   "scenario": "location-search-by-status", 
+   "throughput": {
+    "local": null
+   }, 
+   "iterations": "${__P(scenario-iterations)}", 
+   "concurrency": {
+    "local": "${__P(scenario-concurrency)}"
+   }
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+Created the tree successfully using /tmp/artifacts/modified_requests.jmx
+Starting the test @ Wed Sep 05 13:37:36 UTC 2018 (1536154656397)
+Waiting for possible Shutdown/StopTestNow/Heapdump message on port 4445
+Tidying up ...    @ Wed Sep 05 13:41:45 UTC 2018 (1536154905470)
+... end of run

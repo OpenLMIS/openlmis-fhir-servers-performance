@@ -1,0 +1,336 @@
+---
+cli:
+  linter:
+    disable: false
+    ignored-warnings: []
+    lint-and-exit: false
+    warn-on-unfamiliar-fields: false
+cli-aliases:
+  cloud:
+    provisioning: cloud
+  detach:
+    modules:
+      cloud:
+        detach: true
+  func:
+    modules:
+      console:
+        disable: true
+    settings:
+      aggregator: functional-consolidator
+  gui:
+    modules:
+      jmeter:
+        gui: true
+  install-tools:
+    services:
+    - install-checker
+  lint:
+    cli:
+      linter:
+        lint-and-exit: true
+  local:
+    provisioning: local
+  locations:
+    modules:
+      cloud:
+        dump-locations: true
+    provisioning: cloud
+  nolint:
+    cli:
+      linter:
+        disable: true
+  public:
+    modules:
+      blazemeter:
+        public-report: true
+  report:
+    reporting:
+    - blazemeter
+  sequential:
+    modules:
+      local:
+        sequential: true
+execution:
+- concurrency:
+    local: ${__P(scenario-concurrency)}
+  iterations: ${__P(scenario-iterations)}
+  scenario: location-update
+  throughput:
+    local: null
+- concurrency:
+    local: ${__P(scenario-concurrency)}
+  iterations: ${__P(scenario-iterations)}
+  scenario: location-search-all
+  throughput:
+    local: null
+- concurrency:
+    local: ${__P(scenario-concurrency)}
+  iterations: ${__P(scenario-iterations)}
+  scenario: location-search-by-name
+  throughput:
+    local: null
+- concurrency:
+    local: ${__P(scenario-concurrency)}
+  iterations: ${__P(scenario-iterations)}
+  scenario: location-search-by-partOf
+  throughput:
+    local: null
+- concurrency:
+    local: ${__P(scenario-concurrency)}
+  iterations: ${__P(scenario-iterations)}
+  scenario: location-search-by-status
+  throughput:
+    local: null
+included-configs: []
+install-id: Docker
+modules:
+  ab:
+    class: bzt.modules.ab.ApacheBenchmarkExecutor
+  android-emulator:
+    class: bzt.modules.services.AndroidEmulatorLoader
+  apiritif:
+    class: bzt.modules.python.ApiritifNoseExecutor
+  appium:
+    class: bzt.modules.services.AppiumLoader
+  blazemeter:
+    class: bzt.modules.blazemeter.BlazeMeterUploader
+  capturehar:
+    class: bzt.modules.blazemeter.ServiceStubCaptureHAR
+  cloud:
+    class: bzt.modules.blazemeter.CloudProvisioning
+    default-location: us-central1-a
+  console:
+    class: bzt.modules.console.ConsoleStatusReporter
+  consolidator:
+    class: bzt.modules.aggregator.ConsolidatingAggregator
+    percentiles:
+    - 0.0
+    - 50.0
+    - 90.0
+    - 95.0
+    - 99.0
+    - 99.9
+    - 100.0
+  external-results-loader:
+    class: bzt.modules.external.ExternalResultsLoader
+  final-stats:
+    class: bzt.modules.reporting.FinalStatus
+  final_stats:
+    class: bzt.modules.reporting.FinalStatus
+  functional-consolidator:
+    class: bzt.modules.functional.FunctionalAggregator
+  gatling:
+    class: bzt.modules.gatling.GatlingExecutor
+    properties:
+      gatling.data.file.bufferSize: 256
+  grinder:
+    class: bzt.modules.grinder.GrinderExecutor
+    properties:
+      grinder.useConsole: false
+  install-checker:
+    class: bzt.modules.services.InstallChecker
+  jmeter:
+    class: bzt.modules.jmeter.JMeterExecutor
+    path: /root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh
+    plugins:
+    - jpgc-casutg
+    - jpgc-dummy
+    - jpgc-ffw
+    - jpgc-fifo
+    - jpgc-functions
+    - jpgc-json
+    - jpgc-perfmon
+    - jpgc-prmctl
+    - jpgc-tst
+    properties:
+      fhir-server-url: http://localhost/hapifhir/baseDstu3/Location
+      jmeter.save.saveservice.autoflush: 'true'
+      jmeter.save.saveservice.connect_time: 'true'
+      jmeterengine.force.system.exit: 'true'
+      scenario-concurrency: 1
+      scenario-iterations: 10000
+      summariser.name: ''
+    protocol-handlers:
+      http: bzt.jmx.http.HTTPProtocolHandler
+    system-properties:
+      sun.net.inetaddr.ttl: 0
+    version: '4.0'
+    xml-jtl-flags:
+      responseData: true
+  junit:
+    class: bzt.modules.java.JUnitTester
+  junit-xml:
+    class: bzt.modules.reporting.JUnitXMLReporter
+  local:
+    class: bzt.modules.provisioning.Local
+    sequential: true
+  locust:
+    class: bzt.modules.locustio.LocustIOExecutor
+  mocha:
+    class: bzt.modules.javascript.MochaTester
+  molotov:
+    class: bzt.modules.molotov.MolotovExecutor
+  monitoring:
+    class: bzt.modules.monitoring.Monitoring
+  newman:
+    class: bzt.modules.javascript.NewmanExecutor
+  nose:
+    class: bzt.modules.python.ApiritifNoseExecutor
+  nunit:
+    class: bzt.modules.csharp.NUnitExecutor
+  passfail:
+    class: bzt.modules.passfail.PassFailStatus
+  pbench:
+    class: bzt.modules.pbench.PBenchExecutor
+    enhanced: true
+  proxy2jmx:
+    class: bzt.modules.proxy2jmx.Proxy2JMX
+  pytest:
+    class: bzt.modules.python.PyTestExecutor
+  robot:
+    class: bzt.modules.python.RobotExecutor
+  rspec:
+    class: bzt.modules.ruby.RSpecTester
+  screenshoter:
+    class: bzt.modules.blazemeter.ServiceStubScreenshoter
+  selenium:
+    class: bzt.modules.selenium.SeleniumExecutor
+  shellexec:
+    class: bzt.modules.shellexec.ShellExecutor
+  siege:
+    class: bzt.modules.siege.SiegeExecutor
+  testng:
+    class: bzt.modules.java.TestNGTester
+  tsung:
+    class: bzt.modules.tsung.TsungExecutor
+  unpacker:
+    class: bzt.modules.services.Unpacker
+  virtual-display:
+    class: bzt.modules.services.VirtualDisplay
+  wdio:
+    class: bzt.modules.javascript.WebdriverIOExecutor
+provisioning: local
+reporting:
+- module: final-stats
+- module: console
+- dump-xml: /tmp/artifacts/stats.xml
+  module: final-stats
+- criteria:
+  - condition: '>'
+    fail: true
+    label: ''
+    logic: for
+    message: null
+    stop: true
+    subject: failures
+    threshold: 0%
+    timeframe: 0
+  module: passfail
+scenarios:
+  location-create:
+    requests:
+    - body: ${location}
+      extract-regexp:
+        location_id:
+          default: NOT_FOUND
+          match-no: 1
+          regexp: Location\/(.+?)\/
+          scope: null
+          subject: headers
+          template: 1
+      headers:
+        Content-Type: application/json
+      jsr223:
+        execute: before
+        script-text: "import groovy.json.JsonSlurper\nimport groovy.json.JsonOutput\n\ndef jsonSlurper = new JsonSlurper()\ndef random = new Random()\ndef identifierValue = UUID.randomUUID().toString()\n\ndef location = [\n  resourceType: \"Location\",\n  alias: [ \"N00\" + random.nextInt(1000000) ],\n  identifier: [\n    [ system: \"urn:ietf:rfc:3986\", value: \"https://test.openlmis.org/api/programs/418bdc1d-c303-4bd0-b2d3-d8901150a983\" ],\n    [ system: \"urn:ietf:rfc:3986\", value: \"https://test.openlmis.org/api/facilityTypes/ac1d268b-ce10-455f-bf87-9c667da8f060\" ],\n    [ system: \"urn:ietf:rfc:3986\", value: \"https://test.openlmis.org/api/facilityOperators/9456c3e9-c4a6-4a28-9e08-47ceb16a4121\" ],\n    [ system: \"https://test.openlmis.org\", value: identifierValue ]\n  ],\n  name: \"Lurio, Cuamba\",\n  position: [\n    longitude: 36.852509,\n    latitude: -14.78975\n  ],\n  physicalType: [\n    coding: [\n      [ system: \"http://hl7.org/fhir/location-physical-type\", code: \"si\", display: \"Site\" ]\n    ]\n  ],\n  partOf: [\n    reference: \"https://test.openlmis.org/api/Location/9b8cfb5a-217a-4261-a64f-16ca06ae79fa\"\n  ],\n  status: \"active\"\n]\n\nvars.put(\"location\", JsonOutput.toJson(location))\nvars.put(\"identifier_value\", identifierValue)\n"
+      label: CreateLocation
+      method: POST
+      url: ${__P(fhir-server-url)}
+  location-get-single:
+    requests:
+    - headers:
+        Accept: application/json
+      label: GetSingleLocation
+      method: GET
+      url: ${__P(fhir-server-url)}/${location_id}
+  location-search-all:
+    requests:
+    - label: SearchLocation
+      method: GET
+      url: ${__P(fhir-server-url)}
+  location-search-by-identifier:
+    requests:
+    - label: SearchLocationByIdentifier
+      method: GET
+      url: ${__P(fhir-server-url)}?identifier=https://test.openlmis.org%7C${identifier_value}
+  location-search-by-name:
+    requests:
+    - label: SearchLocationByName
+      method: GET
+      url: ${__P(fhir-server-url)}?name:contains=Lurio
+  location-search-by-partOf:
+    requests:
+    - label: SearchLocationByPartOf
+      method: GET
+      url: ${__P(fhir-server-url)}?partof=https://test.openlmis.org/api/Location/9b8cfb5a-217a-4261-a64f-16ca06ae79fa
+  location-search-by-status:
+    requests:
+    - label: SearchLocationByStatus
+      method: GET
+      url: ${__P(fhir-server-url)}?status:exact=active
+  location-update:
+    requests:
+    - include-scenario: location-create
+    - include-scenario: location-search-by-identifier
+    - include-scenario: location-get-single
+    - body: ${location}
+      headers:
+        Content-Type: application/json
+      jsr223:
+        execute: before
+        script-text: 'import groovy.json.JsonSlurper
+
+          import groovy.json.JsonOutput
+
+
+          def response = prev.getResponseDataAsString()
+
+          def jsonSlurper = new JsonSlurper()
+
+          def location = jsonSlurper.parseText(response)
+
+
+          location.name = "Lurio, Cuamba (Updated)"
+
+          location.remove("meta")
+
+
+          vars.put("location", JsonOutput.toJson(location))
+
+          '
+      label: UpdateLocation
+      method: PUT
+      url: ${__P(fhir-server-url)}/${location_id}
+services:
+- local:
+  - metrics:
+    - cpu
+    - mem
+    - bytes-sent
+    - bytes-recv
+    - disk-read
+    - disk-write
+    - disk-space
+    - engine-loop
+    - conn-all
+  module: monitoring
+settings:
+  aggregator: consolidator
+  artifacts-dir: /tmp/artifacts
+  default-executor: jmeter
+  env:
+    OBJC_DISABLE_INITIALIZE_FORK_SAFETY: 'YES'
+    TAURUS_ARTIFACTS_DIR: /tmp/artifacts
+version: 1.13.0
+

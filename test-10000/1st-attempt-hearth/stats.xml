@@ -1,0 +1,638 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FinalStatus>
+  <TestDuration>821.0</TestDuration>
+  <Group label="">
+    <avg_ct value="0.00001">
+      <name>avg_ct</name>
+      <value>0.00001</value>
+    </avg_ct>
+    <stdev_rt value="0.01151">
+      <name>stdev_rt</name>
+      <value>0.01151</value>
+    </stdev_rt>
+    <avg_lt value="0.00973">
+      <name>avg_lt</name>
+      <value>0.00973</value>
+    </avg_lt>
+    <rc value="10000" param="201">
+      <name>rc/201</name>
+      <value>10000</value>
+    </rc>
+    <rc value="70000" param="200">
+      <name>rc/200</name>
+      <value>70000</value>
+    </rc>
+    <bytes value="500853792">
+      <name>bytes</name>
+      <value>500853792</value>
+    </bytes>
+    <perc value="0.02100" param="95.0">
+      <name>perc/95.0</name>
+      <value>0.02100</value>
+    </perc>
+    <perc value="0.01600" param="90.0">
+      <name>perc/90.0</name>
+      <value>0.01600</value>
+    </perc>
+    <perc value="0.03400" param="99.9">
+      <name>perc/99.9</name>
+      <value>0.03400</value>
+    </perc>
+    <perc value="0.00200" param="0.0">
+      <name>perc/0.0</name>
+      <value>0.00200</value>
+    </perc>
+    <perc value="0.36700" param="100.0">
+      <name>perc/100.0</name>
+      <value>0.36700</value>
+    </perc>
+    <perc value="0.03000" param="99.0">
+      <name>perc/99.0</name>
+      <value>0.03000</value>
+    </perc>
+    <perc value="0.01100" param="50.0">
+      <name>perc/50.0</name>
+      <value>0.01100</value>
+    </perc>
+    <succ value="80000">
+      <name>succ</name>
+      <value>80000</value>
+    </succ>
+    <throughput value="80000">
+      <name>throughput</name>
+      <value>80000</value>
+    </throughput>
+    <concurrency value="1">
+      <name>concurrency</name>
+      <value>1</value>
+    </concurrency>
+    <avg_rt value="0.00975">
+      <name>avg_rt</name>
+      <value>0.00975</value>
+    </avg_rt>
+    <fail value="0">
+      <name>fail</name>
+      <value>0</value>
+    </fail>
+  </Group>
+  <Group label="UpdateLocation">
+    <avg_ct value="0">
+      <name>avg_ct</name>
+      <value>0</value>
+    </avg_ct>
+    <stdev_rt value="0.01340">
+      <name>stdev_rt</name>
+      <value>0.01340</value>
+    </stdev_rt>
+    <avg_lt value="0.01251">
+      <name>avg_lt</name>
+      <value>0.01251</value>
+    </avg_lt>
+    <rc value="10000" param="200">
+      <name>rc/200</name>
+      <value>10000</value>
+    </rc>
+    <bytes value="4168000">
+      <name>bytes</name>
+      <value>4168000</value>
+    </bytes>
+    <perc value="0.02000" param="95.0">
+      <name>perc/95.0</name>
+      <value>0.02000</value>
+    </perc>
+    <perc value="0.01900" param="90.0">
+      <name>perc/90.0</name>
+      <value>0.01900</value>
+    </perc>
+    <perc value="0.02500" param="99.9">
+      <name>perc/99.9</name>
+      <value>0.02500</value>
+    </perc>
+    <perc value="0.00400" param="0.0">
+      <name>perc/0.0</name>
+      <value>0.00400</value>
+    </perc>
+    <perc value="0.07200" param="100.0">
+      <name>perc/100.0</name>
+      <value>0.07200</value>
+    </perc>
+    <perc value="0.02200" param="99.0">
+      <name>perc/99.0</name>
+      <value>0.02200</value>
+    </perc>
+    <perc value="0.01200" param="50.0">
+      <name>perc/50.0</name>
+      <value>0.01200</value>
+    </perc>
+    <succ value="10000">
+      <name>succ</name>
+      <value>10000</value>
+    </succ>
+    <throughput value="10000">
+      <name>throughput</name>
+      <value>10000</value>
+    </throughput>
+    <concurrency value="1">
+      <name>concurrency</name>
+      <value>1</value>
+    </concurrency>
+    <avg_rt value="0.01251">
+      <name>avg_rt</name>
+      <value>0.01251</value>
+    </avg_rt>
+    <fail value="0">
+      <name>fail</name>
+      <value>0</value>
+    </fail>
+  </Group>
+  <Group label="SearchLocation">
+    <avg_ct value="0.00001">
+      <name>avg_ct</name>
+      <value>0.00001</value>
+    </avg_ct>
+    <stdev_rt value="0.00326">
+      <name>stdev_rt</name>
+      <value>0.00326</value>
+    </stdev_rt>
+    <avg_lt value="0.00307">
+      <name>avg_lt</name>
+      <value>0.00307</value>
+    </avg_lt>
+    <rc value="10000" param="200">
+      <name>rc/200</name>
+      <value>10000</value>
+    </rc>
+    <bytes value="114999500">
+      <name>bytes</name>
+      <value>114999500</value>
+    </bytes>
+    <perc value="0.00400" param="95.0">
+      <name>perc/95.0</name>
+      <value>0.00400</value>
+    </perc>
+    <perc value="0.00400" param="90.0">
+      <name>perc/90.0</name>
+      <value>0.00400</value>
+    </perc>
+    <perc value="0.00900" param="99.9">
+      <name>perc/99.9</name>
+      <value>0.00900</value>
+    </perc>
+    <perc value="0.00200" param="0.0">
+      <name>perc/0.0</name>
+      <value>0.00200</value>
+    </perc>
+    <perc value="0.06100" param="100.0">
+      <name>perc/100.0</name>
+      <value>0.06100</value>
+    </perc>
+    <perc value="0.00600" param="99.0">
+      <name>perc/99.0</name>
+      <value>0.00600</value>
+    </perc>
+    <perc value="0.00300" param="50.0">
+      <name>perc/50.0</name>
+      <value>0.00300</value>
+    </perc>
+    <succ value="10000">
+      <name>succ</name>
+      <value>10000</value>
+    </succ>
+    <throughput value="10000">
+      <name>throughput</name>
+      <value>10000</value>
+    </throughput>
+    <concurrency value="1">
+      <name>concurrency</name>
+      <value>1</value>
+    </concurrency>
+    <avg_rt value="0.00310">
+      <name>avg_rt</name>
+      <value>0.00310</value>
+    </avg_rt>
+    <fail value="0">
+      <name>fail</name>
+      <value>0</value>
+    </fail>
+  </Group>
+  <Group label="SearchLocationByIdentifier">
+    <avg_ct value="0">
+      <name>avg_ct</name>
+      <value>0</value>
+    </avg_ct>
+    <stdev_rt value="0.01946">
+      <name>stdev_rt</name>
+      <value>0.01946</value>
+    </stdev_rt>
+    <avg_lt value="0.01761">
+      <name>avg_lt</name>
+      <value>0.01761</value>
+    </avg_lt>
+    <rc value="10000" param="200">
+      <name>rc/200</name>
+      <value>10000</value>
+    </rc>
+    <bytes value="17018896">
+      <name>bytes</name>
+      <value>17018896</value>
+    </bytes>
+    <perc value="0.03000" param="95.0">
+      <name>perc/95.0</name>
+      <value>0.03000</value>
+    </perc>
+    <perc value="0.02900" param="90.0">
+      <name>perc/90.0</name>
+      <value>0.02900</value>
+    </perc>
+    <perc value="0.03800" param="99.9">
+      <name>perc/99.9</name>
+      <value>0.03800</value>
+    </perc>
+    <perc value="0.00300" param="0.0">
+      <name>perc/0.0</name>
+      <value>0.00300</value>
+    </perc>
+    <perc value="0.06200" param="100.0">
+      <name>perc/100.0</name>
+      <value>0.06200</value>
+    </perc>
+    <perc value="0.03300" param="99.0">
+      <name>perc/99.0</name>
+      <value>0.03300</value>
+    </perc>
+    <perc value="0.01700" param="50.0">
+      <name>perc/50.0</name>
+      <value>0.01700</value>
+    </perc>
+    <succ value="10000">
+      <name>succ</name>
+      <value>10000</value>
+    </succ>
+    <throughput value="10000">
+      <name>throughput</name>
+      <value>10000</value>
+    </throughput>
+    <concurrency value="1">
+      <name>concurrency</name>
+      <value>1</value>
+    </concurrency>
+    <avg_rt value="0.01762">
+      <name>avg_rt</name>
+      <value>0.01762</value>
+    </avg_rt>
+    <fail value="0">
+      <name>fail</name>
+      <value>0</value>
+    </fail>
+  </Group>
+  <Group label="SearchLocationByStatus">
+    <avg_ct value="0.00001">
+      <name>avg_ct</name>
+      <value>0.00001</value>
+    </avg_ct>
+    <stdev_rt value="0.01163">
+      <name>stdev_rt</name>
+      <value>0.01163</value>
+    </stdev_rt>
+    <avg_lt value="0.01155">
+      <name>avg_lt</name>
+      <value>0.01155</value>
+    </avg_lt>
+    <rc value="10000" param="200">
+      <name>rc/200</name>
+      <value>10000</value>
+    </rc>
+    <bytes value="115419500">
+      <name>bytes</name>
+      <value>115419500</value>
+    </bytes>
+    <perc value="0.01300" param="95.0">
+      <name>perc/95.0</name>
+      <value>0.01300</value>
+    </perc>
+    <perc value="0.01300" param="90.0">
+      <name>perc/90.0</name>
+      <value>0.01300</value>
+    </perc>
+    <perc value="0.01800" param="99.9">
+      <name>perc/99.9</name>
+      <value>0.01800</value>
+    </perc>
+    <perc value="0.01000" param="0.0">
+      <name>perc/0.0</name>
+      <value>0.01000</value>
+    </perc>
+    <perc value="0.06900" param="100.0">
+      <name>perc/100.0</name>
+      <value>0.06900</value>
+    </perc>
+    <perc value="0.01500" param="99.0">
+      <name>perc/99.0</name>
+      <value>0.01500</value>
+    </perc>
+    <perc value="0.01100" param="50.0">
+      <name>perc/50.0</name>
+      <value>0.01100</value>
+    </perc>
+    <succ value="10000">
+      <name>succ</name>
+      <value>10000</value>
+    </succ>
+    <throughput value="10000">
+      <name>throughput</name>
+      <value>10000</value>
+    </throughput>
+    <concurrency value="1">
+      <name>concurrency</name>
+      <value>1</value>
+    </concurrency>
+    <avg_rt value="0.01157">
+      <name>avg_rt</name>
+      <value>0.01157</value>
+    </avg_rt>
+    <fail value="0">
+      <name>fail</name>
+      <value>0</value>
+    </fail>
+  </Group>
+  <Group label="CreateLocation">
+    <avg_ct value="0.00002">
+      <name>avg_ct</name>
+      <value>0.00002</value>
+    </avg_ct>
+    <stdev_rt value="0.00476">
+      <name>stdev_rt</name>
+      <value>0.00476</value>
+    </stdev_rt>
+    <avg_lt value="0.00288">
+      <name>avg_lt</name>
+      <value>0.00288</value>
+    </avg_lt>
+    <rc value="10000" param="201">
+      <name>rc/201</name>
+      <value>10000</value>
+    </rc>
+    <bytes value="4200000">
+      <name>bytes</name>
+      <value>4200000</value>
+    </bytes>
+    <perc value="0.00400" param="95.0">
+      <name>perc/95.0</name>
+      <value>0.00400</value>
+    </perc>
+    <perc value="0.00400" param="90.0">
+      <name>perc/90.0</name>
+      <value>0.00400</value>
+    </perc>
+    <perc value="0.00800" param="99.9">
+      <name>perc/99.9</name>
+      <value>0.00800</value>
+    </perc>
+    <perc value="0.00200" param="0.0">
+      <name>perc/0.0</name>
+      <value>0.00200</value>
+    </perc>
+    <perc value="0.36700" param="100.0">
+      <name>perc/100.0</name>
+      <value>0.36700</value>
+    </perc>
+    <perc value="0.00500" param="99.0">
+      <name>perc/99.0</name>
+      <value>0.00500</value>
+    </perc>
+    <perc value="0.00300" param="50.0">
+      <name>perc/50.0</name>
+      <value>0.00300</value>
+    </perc>
+    <succ value="10000">
+      <name>succ</name>
+      <value>10000</value>
+    </succ>
+    <throughput value="10000">
+      <name>throughput</name>
+      <value>10000</value>
+    </throughput>
+    <concurrency value="1">
+      <name>concurrency</name>
+      <value>1</value>
+    </concurrency>
+    <avg_rt value="0.00289">
+      <name>avg_rt</name>
+      <value>0.00289</value>
+    </avg_rt>
+    <fail value="0">
+      <name>fail</name>
+      <value>0</value>
+    </fail>
+  </Group>
+  <Group label="SearchLocationByPartOf">
+    <avg_ct value="0.00001">
+      <name>avg_ct</name>
+      <value>0.00001</value>
+    </avg_ct>
+    <stdev_rt value="0.01153">
+      <name>stdev_rt</name>
+      <value>0.01153</value>
+    </stdev_rt>
+    <avg_lt value="0.01146">
+      <name>avg_lt</name>
+      <value>0.01146</value>
+    </avg_lt>
+    <rc value="10000" param="200">
+      <name>rc/200</name>
+      <value>10000</value>
+    </rc>
+    <bytes value="116779500">
+      <name>bytes</name>
+      <value>116779500</value>
+    </bytes>
+    <perc value="0.01300" param="95.0">
+      <name>perc/95.0</name>
+      <value>0.01300</value>
+    </perc>
+    <perc value="0.01200" param="90.0">
+      <name>perc/90.0</name>
+      <value>0.01200</value>
+    </perc>
+    <perc value="0.01800" param="99.9">
+      <name>perc/99.9</name>
+      <value>0.01800</value>
+    </perc>
+    <perc value="0.01000" param="0.0">
+      <name>perc/0.0</name>
+      <value>0.01000</value>
+    </perc>
+    <perc value="0.07300" param="100.0">
+      <name>perc/100.0</name>
+      <value>0.07300</value>
+    </perc>
+    <perc value="0.01500" param="99.0">
+      <name>perc/99.0</name>
+      <value>0.01500</value>
+    </perc>
+    <perc value="0.01100" param="50.0">
+      <name>perc/50.0</name>
+      <value>0.01100</value>
+    </perc>
+    <succ value="10000">
+      <name>succ</name>
+      <value>10000</value>
+    </succ>
+    <throughput value="10000">
+      <name>throughput</name>
+      <value>10000</value>
+    </throughput>
+    <concurrency value="1">
+      <name>concurrency</name>
+      <value>1</value>
+    </concurrency>
+    <avg_rt value="0.01149">
+      <name>avg_rt</name>
+      <value>0.01149</value>
+    </avg_rt>
+    <fail value="0">
+      <name>fail</name>
+      <value>0</value>
+    </fail>
+  </Group>
+  <Group label="SearchLocationByName">
+    <avg_ct value="0.00001">
+      <name>avg_ct</name>
+      <value>0.00001</value>
+    </avg_ct>
+    <stdev_rt value="0.01232">
+      <name>stdev_rt</name>
+      <value>0.01232</value>
+    </stdev_rt>
+    <avg_lt value="0.01225">
+      <name>avg_lt</name>
+      <value>0.01225</value>
+    </avg_lt>
+    <rc value="10000" param="200">
+      <name>rc/200</name>
+      <value>10000</value>
+    </rc>
+    <bytes value="115419500">
+      <name>bytes</name>
+      <value>115419500</value>
+    </bytes>
+    <perc value="0.01400" param="95.0">
+      <name>perc/95.0</name>
+      <value>0.01400</value>
+    </perc>
+    <perc value="0.01300" param="90.0">
+      <name>perc/90.0</name>
+      <value>0.01300</value>
+    </perc>
+    <perc value="0.02000" param="99.9">
+      <name>perc/99.9</name>
+      <value>0.02000</value>
+    </perc>
+    <perc value="0.01100" param="0.0">
+      <name>perc/0.0</name>
+      <value>0.01100</value>
+    </perc>
+    <perc value="0.07500" param="100.0">
+      <name>perc/100.0</name>
+      <value>0.07500</value>
+    </perc>
+    <perc value="0.01600" param="99.0">
+      <name>perc/99.0</name>
+      <value>0.01600</value>
+    </perc>
+    <perc value="0.01200" param="50.0">
+      <name>perc/50.0</name>
+      <value>0.01200</value>
+    </perc>
+    <succ value="10000">
+      <name>succ</name>
+      <value>10000</value>
+    </succ>
+    <throughput value="10000">
+      <name>throughput</name>
+      <value>10000</value>
+    </throughput>
+    <concurrency value="1">
+      <name>concurrency</name>
+      <value>1</value>
+    </concurrency>
+    <avg_rt value="0.01227">
+      <name>avg_rt</name>
+      <value>0.01227</value>
+    </avg_rt>
+    <fail value="0">
+      <name>fail</name>
+      <value>0</value>
+    </fail>
+  </Group>
+  <Group label="GetSingleLocation">
+    <avg_ct value="0">
+      <name>avg_ct</name>
+      <value>0</value>
+    </avg_ct>
+    <stdev_rt value="0.00697">
+      <name>stdev_rt</name>
+      <value>0.00697</value>
+    </stdev_rt>
+    <avg_lt value="0.00653">
+      <name>avg_lt</name>
+      <value>0.00653</value>
+    </avg_lt>
+    <rc value="10000" param="200">
+      <name>rc/200</name>
+      <value>10000</value>
+    </rc>
+    <bytes value="12848896">
+      <name>bytes</name>
+      <value>12848896</value>
+    </bytes>
+    <perc value="0.01000" param="95.0">
+      <name>perc/95.0</name>
+      <value>0.01000</value>
+    </perc>
+    <perc value="0.01000" param="90.0">
+      <name>perc/90.0</name>
+      <value>0.01000</value>
+    </perc>
+    <perc value="0.01300" param="99.9">
+      <name>perc/99.9</name>
+      <value>0.01300</value>
+    </perc>
+    <perc value="0.00200" param="0.0">
+      <name>perc/0.0</name>
+      <value>0.00200</value>
+    </perc>
+    <perc value="0.06900" param="100.0">
+      <name>perc/100.0</name>
+      <value>0.06900</value>
+    </perc>
+    <perc value="0.01100" param="99.0">
+      <name>perc/99.0</name>
+      <value>0.01100</value>
+    </perc>
+    <perc value="0.00600" param="50.0">
+      <name>perc/50.0</name>
+      <value>0.00600</value>
+    </perc>
+    <succ value="10000">
+      <name>succ</name>
+      <value>10000</value>
+    </succ>
+    <throughput value="10000">
+      <name>throughput</name>
+      <value>10000</value>
+    </throughput>
+    <concurrency value="1">
+      <name>concurrency</name>
+      <value>1</value>
+    </concurrency>
+    <avg_rt value="0.00654">
+      <name>avg_rt</name>
+      <value>0.00654</value>
+    </avg_rt>
+    <fail value="0">
+      <name>fail</name>
+      <value>0</value>
+    </fail>
+  </Group>
+</FinalStatus>

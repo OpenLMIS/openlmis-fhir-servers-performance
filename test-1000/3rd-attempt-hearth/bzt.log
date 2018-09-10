@@ -1,0 +1,400 @@
+[2018-09-05 13:04:44,482 INFO root] Taurus CLI Tool v1.13.0
+[2018-09-05 13:04:44,483 DEBUG root] Command-line options: {'verbose': None, 'no_system_configs': None, 'quiet': None, 'log': '/tmp/artifacts/bzt.log', 'option': ['reporting.2.dump-xml=/tmp/artifacts/stats.xml'], 'aliases': []}
+[2018-09-05 13:04:44,483 DEBUG root] Python: CPython 2.7.12
+[2018-09-05 13:04:44,483 DEBUG root] OS: ('Linux', '315ee3c89a88', '4.15.0-33-generic', '#36-Ubuntu SMP Wed Aug 15 16:00:05 UTC 2018', 'x86_64', 'x86_64')
+[2018-09-05 13:04:44,484 INFO root] Starting with configs: ['config.yml']
+[2018-09-05 13:04:44,484 DEBUG root] Using personal config: /root/.bzt-rc
+[2018-09-05 13:04:44,484 INFO Engine] Configuring...
+[2018-09-05 13:04:44,484 DEBUG Engine] Reading extension configs from: /etc/bzt.d
+[2018-09-05 13:04:44,484 DEBUG Engine] Base configs list: ['/usr/local/lib/python2.7/dist-packages/bzt/resources/base-config.yml', '/etc/bzt.d/50-pbench-enhanced.json', '/etc/bzt.d/90-artifacts-dir.json', '/etc/bzt.d/99-zinstallID.json']
+[2018-09-05 13:04:44,484 DEBUG Engine.Configuration] Configs: ['/usr/local/lib/python2.7/dist-packages/bzt/resources/base-config.yml', '/etc/bzt.d/50-pbench-enhanced.json', '/etc/bzt.d/90-artifacts-dir.json', '/etc/bzt.d/99-zinstallID.json']
+[2018-09-05 13:04:44,484 DEBUG Engine.Configuration] Reading /usr/local/lib/python2.7/dist-packages/bzt/resources/base-config.yml as YAML
+[2018-09-05 13:04:44,512 DEBUG Engine.Configuration] Reading /etc/bzt.d/50-pbench-enhanced.json as YAML
+[2018-09-05 13:04:44,513 DEBUG Engine.Configuration] Reading /etc/bzt.d/90-artifacts-dir.json as YAML
+[2018-09-05 13:04:44,513 DEBUG Engine.Configuration] Reading /etc/bzt.d/99-zinstallID.json as YAML
+[2018-09-05 13:04:44,513 DEBUG Engine] User configs list: ['/root/.bzt-rc', 'config.yml']
+[2018-09-05 13:04:44,513 DEBUG Engine.Configuration] Configs: ['/root/.bzt-rc', 'config.yml']
+[2018-09-05 13:04:44,514 DEBUG Engine.Configuration] Reading /root/.bzt-rc as YAML
+[2018-09-05 13:04:44,518 DEBUG Engine.Configuration] Reading config.yml as YAML
+[2018-09-05 13:04:44,532 DEBUG Engine.Configuration] Configs: ['/root/.bzt-rc', 'config.yml']
+[2018-09-05 13:04:44,532 DEBUG Engine.Configuration] Reading /root/.bzt-rc as YAML
+[2018-09-05 13:04:44,535 DEBUG Engine.Configuration] Reading config.yml as YAML
+[2018-09-05 13:04:44,550 DEBUG Engine] Requesting updates info: http://gettaurus.org/updates/?version=1.13.0&installID=Docker
+[2018-09-05 13:04:44,550 DEBUG ConfigOverrider] Applying reporting.2.dump-xml=/tmp/artifacts/stats.xml
+[2018-09-05 13:04:44,550 DEBUG HTTPClient] Making HTTP request GET http://gettaurus.org/updates/?version=1.13.0&installID=Docker
+[2018-09-05 13:04:44,550 DEBUG ConfigOverrider] Applying: [dump-xml]=/tmp/artifacts/stats.xml
+[2018-09-05 13:04:44,552 DEBUG ConfigOverrider] Parsed override value: '/tmp/artifacts/stats.xml' -> '/tmp/artifacts/stats.xml' (<type 'str'>)
+[2018-09-05 13:04:44,552 INFO Engine] Artifacts dir: /tmp/artifacts
+[2018-09-05 13:04:44,552 DEBUG urllib3.connectionpool] Starting new HTTP connection (1): gettaurus.org:80
+[2018-09-05 13:04:44,553 DEBUG Engine] New artifact filename: /tmp/artifacts/effective
+[2018-09-05 13:04:44,555 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 13:04:44,594 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 13:04:44,595 DEBUG Engine] New artifact filename: /tmp/artifacts/merged.yml
+[2018-09-05 13:04:44,595 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/merged.yml
+[2018-09-05 13:04:44,607 DEBUG Engine] New artifact filename: /tmp/artifacts/merged.json
+[2018-09-05 13:04:44,608 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/merged.json
+[2018-09-05 13:04:44,608 DEBUG Engine] Add existing artifact (move=False): config.yml
+[2018-09-05 13:04:44,608 DEBUG Engine] Copying config.yml to /tmp/artifacts/config.yml
+[2018-09-05 13:04:44,608 DEBUG Engine.Environment] Replace 'TAURUS_ARTIFACTS_DIR' in environment
+[2018-09-05 13:04:44,609 DEBUG root] Closing log handler: /tmp/artifacts/bzt.log
+[2018-09-05 13:04:44,609 DEBUG root] Switched writing logs to /tmp/artifacts/bzt.log
+[2018-09-05 13:04:44,609 DEBUG root] Linting config
+[2018-09-05 13:04:44,612 INFO Engine] Preparing...
+[2018-09-05 13:04:44,613 DEBUG Engine] Module config: consolidator {'class': u'bzt.modules.aggregator.ConsolidatingAggregator'}
+[2018-09-05 13:04:44,613 DEBUG root] Importing module: bzt.modules.aggregator
+[2018-09-05 13:04:44,696 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/aggregator.pyc'>
+[2018-09-05 13:04:44,696 DEBUG Engine.consolidator] Buffer scaling setup: percentile 95.0 from [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0] selected
+[2018-09-05 13:04:44,697 DEBUG Engine] Module config: monitoring {'class': u'bzt.modules.monitoring.Monitoring'}
+[2018-09-05 13:04:44,697 DEBUG root] Importing module: bzt.modules.monitoring
+[2018-09-05 13:04:44,698 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/monitoring.pyc'>
+[2018-09-05 13:04:44,698 DEBUG Engine] Module config: local {'sequential': True, 'class': u'bzt.modules.provisioning.Local'}
+[2018-09-05 13:04:44,699 DEBUG root] Importing module: bzt.modules.provisioning
+[2018-09-05 13:04:44,699 DEBUG root] Loading class: 'Local' from <module 'bzt.modules.provisioning' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/provisioning.pyc'>
+[2018-09-05 13:04:44,699 DEBUG Engine] Module config: jmeter {'xml-jtl-flags': {'responseData': True}, 'properties': {'jmeter.save.saveservice.autoflush': u'true', 'jmeter.save.saveservice.connect_time': u'true', 'scenario-concurrency': 1, 'scenario-iterations': 1000, 'summariser.name': u'', 'fhir-server-url': u'http://localhost/fhir/Location', 'jmeterengine.force.system.exit': u'true'}, 'plugins': [u'jpgc-casutg', u'jpgc-dummy', u'jpgc-ffw', u'jpgc-fifo', u'jpgc-functions', u'jpgc-json', u'jpgc-perfmon', u'jpgc-prmctl', u'jpgc-tst'], 'class': u'bzt.modules.jmeter.JMeterExecutor', 'protocol-handlers': {'http': u'bzt.jmx.http.HTTPProtocolHandler'}}
+[2018-09-05 13:04:44,699 DEBUG root] Importing module: bzt.modules.jmeter
+[2018-09-05 13:04:44,709 DEBUG root] Loading class: 'JMeterExecutor' from <module 'bzt.modules.jmeter' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/jmeter.pyc'>
+[2018-09-05 13:04:44,709 DEBUG Engine.local] Preparing executor: None/139845914504016
+[2018-09-05 13:04:44,710 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter.log
+[2018-09-05 13:04:44,710 DEBUG Engine.jmeter] Checking if port 4445 is free
+[2018-09-05 13:04:44,711 DEBUG Engine.jmeter] Port 4445 is free
+[2018-09-05 13:04:44,711 DEBUG Engine.jmeter] Using port 4445 for management
+[2018-09-05 13:04:44,711 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2018-09-05 13:04:44,723 DEBUG urllib3.connectionpool] http://gettaurus.org:80 "GET /updates/?version=1.13.0&installID=Docker HTTP/1.1" 200 60
+[2018-09-05 13:04:44,724 DEBUG Engine] Taurus updates info: {u'needsUpgrade': False, u'latest': u'1.13.0'}
+[2018-09-05 13:04:44,724 DEBUG Engine] Installation is up-to-date
+[2018-09-05 13:04:44,896 DEBUG Engine.jmeter.JavaVM] JavaVM output: openjdk version "1.8.0_181"
+OpenJDK Runtime Environment (build 1.8.0_181-8u181-b13-0ubuntu0.16.04.1-b13)
+OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+[2018-09-05 13:04:44,896 DEBUG Engine.jmeter.TclLibrary] We don't need to check tcl library on this platform
+[2018-09-05 13:04:44,896 DEBUG Engine.jmeter.JMeter] Trying jmeter: /root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh
+[2018-09-05 13:04:44,897 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh', '-j', '/tmp/jmeteroTQJ3llog', '--version'] at .
+[2018-09-05 13:04:46,115 DEBUG Engine.jmeter.JMeter] JMeter check:     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____     
+   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \   
+  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) | 
+ / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <  
+/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 4.0 r1823414  
+
+Copyright (c) 1999-2018 The Apache Software Foundation
+
+ / None
+[2018-09-05 13:04:46,116 DEBUG Engine] New artifact filename: /tmp/artifacts/requests.jmx
+[2018-09-05 13:04:46,117 DEBUG root] Importing module: bzt.jmx.http
+[2018-09-05 13:04:46,117 DEBUG root] Loading class: 'HTTPProtocolHandler' from <module 'bzt.jmx.http' from '/usr/local/lib/python2.7/dist-packages/bzt/jmx/http.pyc'>
+[2018-09-05 13:04:46,121 DEBUG JMeterScenarioBuilder] Saving JMX to: /tmp/artifacts/requests.jmx
+[2018-09-05 13:04:46,122 DEBUG Engine.jmeter] Load: LoadSpec(concurrency=u'${__P(scenario-concurrency)}', throughput=None, ramp_up=None, hold=0, iterations=u'${__P(scenario-iterations)}', duration=None, steps=None)
+[2018-09-05 13:04:46,124 DEBUG Engine] New artifact filename: /tmp/artifacts/kpi.jtl
+[2018-09-05 13:04:46,125 DEBUG Engine] New artifact filename: /tmp/artifacts/error.jtl
+[2018-09-05 13:04:46,126 DEBUG Engine.jmeter.LoadSettingsProcessor] Thread group detection: duration not found, regular ThreadGroup will be used
+[2018-09-05 13:04:46,127 DEBUG Engine.jmeter.LoadSettingsProcessor.ThreadGroupHandler] Converting ThreadGroup (location-update) to ThreadGroup and apply load parameters
+[2018-09-05 13:04:46,127 DEBUG Engine] New artifact filename: /tmp/artifacts/modified_requests.jmx
+[2018-09-05 13:04:46,127 DEBUG JMX] Saving JMX to: /tmp/artifacts/modified_requests.jmx
+[2018-09-05 13:04:46,128 DEBUG Engine.jmeter] Additional properties: {'jmeter.save.saveservice.autoflush': u'true', 'jmeter.save.saveservice.connect_time': u'true', 'user.classpath': '/tmp/artifacts:/tmp/artifacts', 'sampleresult.default.encoding': 'UTF-8', 'jmeterengine.nongui.maxport': 4445, 'scenario-iterations': 1000, 'summariser.name': u'', 'fhir-server-url': u'http://localhost/fhir/Location', 'jmeterengine.force.system.exit': u'true', 'jmeter.save.saveservice.timestamp_format': 'ms', 'scenario-concurrency': 1, 'jmeterengine.nongui.port': 4445}
+[2018-09-05 13:04:46,128 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-bzt.properties
+[2018-09-05 13:04:46,128 DEBUG Engine.jmeter] Additional system properties {'sun.net.inetaddr.ttl': 0}
+[2018-09-05 13:04:46,128 DEBUG Engine] New artifact filename: /tmp/artifacts/system.properties
+[2018-09-05 13:04:46,129 DEBUG Engine.jmeter.JMeter] Passing JVM_ARGS: ''
+[2018-09-05 13:04:46,129 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/PluginsManagerCMD.sh', 'install-for-jmx', '/tmp/artifacts/modified_requests.jmx'] at .
+[2018-09-05 13:04:49,115 DEBUG Engine.jmeter.JMeter] Try to detect plugins for /tmp/artifacts/modified_requests.jmx
+2018-09-05 13:04:47,080 INFO o.j.r.PluginManagerCMD: Command is: install-for-jmx
+2018-09-05 13:04:47,118 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=linux-9e5c8983f3c250217bcb08ae04daa306-nongui
+2018-09-05 13:04:48,648 INFO o.j.r.PluginManager: Plugins Status: [jpgc-functions=2.1, jpgc-casutg=2.5, jpgc-dummy=0.2, jpgc-ffw=2.0, jpgc-fifo=0.2, jpgc-json=2.6, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.3, jpgc-tst=2.5, jmeter-core=4.0, jmeter-ftp=4.0, jmeter-http=4.0, jmeter-jdbc=4.0, jmeter-jms=4.0, jmeter-junit=4.0, jmeter-java=4.0, jmeter-ldap=4.0, jmeter-mail=4.0, jmeter-mongodb=4.0, jmeter-native=4.0, jmeter-tcp=4.0, jmeter-components=4.0]
+2018-09-05 13:04:48,650 INFO o.j.r.PluginManagerCMD: Params line is: /tmp/artifacts/modified_requests.jmx
+2018-09-05 13:04:48,905 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2018-09-05 13:04:48,916 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2018-09-05 13:04:48,921 INFO o.a.j.s.SaveService: Using SaveService properties version 4.0
+2018-09-05 13:04:48,960 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2018-09-05 13:04:48,964 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2018-09-05 13:04:48,968 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [option]
+2018-09-05 13:04:48,968 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [add]
+2018-09-05 13:04:48,968 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [add_host]
+2018-09-05 13:04:48,968 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [delete]
+2018-09-05 13:04:48,968 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [delete_host]
+2018-09-05 13:04:48,968 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [use_system_dns_resolver]
+2018-09-05 13:04:48,968 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [use_custom_dns_resolver]
+2018-09-05 13:04:48,969 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_hostname_or_ip]
+2018-09-05 13:04:48,969 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_host]
+2018-09-05 13:04:48,969 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_hostname_or_ip]
+2018-09-05 13:04:49,023 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 13:04:49,023 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 13:04:49,023 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 13:04:49,023 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 13:04:49,023 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2018-09-05 13:04:49,024 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2018-09-05 13:04:49,085 INFO o.j.r.PluginManager: Finishing without changes
+
+
+[2018-09-05 13:04:49,115 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter.out
+[2018-09-05 13:04:49,115 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter.err
+[2018-09-05 13:04:49,116 DEBUG Engine.local] Preparing executor: None/139845417708688
+[2018-09-05 13:04:49,116 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-1.log
+[2018-09-05 13:04:49,116 DEBUG Engine.jmeter] Checking if port 4446 is free
+[2018-09-05 13:04:49,116 DEBUG Engine.jmeter] Port 4446 is free
+[2018-09-05 13:04:49,116 DEBUG Engine.jmeter] Using port 4446 for management
+[2018-09-05 13:04:49,117 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2018-09-05 13:04:49,169 DEBUG Engine.jmeter.JavaVM] JavaVM output: openjdk version "1.8.0_181"
+OpenJDK Runtime Environment (build 1.8.0_181-8u181-b13-0ubuntu0.16.04.1-b13)
+OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+[2018-09-05 13:04:49,169 DEBUG Engine.jmeter.TclLibrary] We don't need to check tcl library on this platform
+[2018-09-05 13:04:49,170 DEBUG Engine.jmeter.JMeter] Trying jmeter: /root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh
+[2018-09-05 13:04:49,170 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh', '-j', '/tmp/jmeterikMl7plog', '--version'] at .
+[2018-09-05 13:04:50,353 DEBUG Engine.jmeter.JMeter] JMeter check:     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____     
+   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \   
+  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) | 
+ / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <  
+/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 4.0 r1823414  
+
+Copyright (c) 1999-2018 The Apache Software Foundation
+
+ / None
+[2018-09-05 13:04:50,354 DEBUG Engine] New artifact filename: /tmp/artifacts/requests-1.jmx
+[2018-09-05 13:04:50,354 DEBUG root] Importing module: bzt.jmx.http
+[2018-09-05 13:04:50,355 DEBUG root] Loading class: 'HTTPProtocolHandler' from <module 'bzt.jmx.http' from '/usr/local/lib/python2.7/dist-packages/bzt/jmx/http.pyc'>
+[2018-09-05 13:04:50,356 DEBUG JMeterScenarioBuilder] Saving JMX to: /tmp/artifacts/requests-1.jmx
+[2018-09-05 13:04:50,357 DEBUG Engine.jmeter] Load: LoadSpec(concurrency=u'${__P(scenario-concurrency)}', throughput=None, ramp_up=None, hold=0, iterations=u'${__P(scenario-iterations)}', duration=None, steps=None)
+[2018-09-05 13:04:50,358 DEBUG Engine] New artifact filename: /tmp/artifacts/kpi-1.jtl
+[2018-09-05 13:04:50,359 DEBUG Engine] New artifact filename: /tmp/artifacts/error-1.jtl
+[2018-09-05 13:04:50,359 DEBUG Engine.jmeter.LoadSettingsProcessor] Thread group detection: duration not found, regular ThreadGroup will be used
+[2018-09-05 13:04:50,360 DEBUG Engine.jmeter.LoadSettingsProcessor.ThreadGroupHandler] Converting ThreadGroup (location-search-all) to ThreadGroup and apply load parameters
+[2018-09-05 13:04:50,360 DEBUG Engine] New artifact filename: /tmp/artifacts/modified_requests-1.jmx
+[2018-09-05 13:04:50,361 DEBUG JMX] Saving JMX to: /tmp/artifacts/modified_requests-1.jmx
+[2018-09-05 13:04:50,361 DEBUG Engine.jmeter] Additional properties: {'jmeter.save.saveservice.autoflush': u'true', 'jmeter.save.saveservice.connect_time': u'true', 'user.classpath': '/tmp/artifacts:/tmp/artifacts', 'sampleresult.default.encoding': 'UTF-8', 'jmeterengine.nongui.maxport': 4446, 'scenario-iterations': 1000, 'summariser.name': u'', 'fhir-server-url': u'http://localhost/fhir/Location', 'jmeterengine.force.system.exit': u'true', 'jmeter.save.saveservice.timestamp_format': 'ms', 'scenario-concurrency': 1, 'jmeterengine.nongui.port': 4446}
+[2018-09-05 13:04:50,361 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-bzt-1.properties
+[2018-09-05 13:04:50,361 DEBUG Engine.jmeter] Additional system properties {'sun.net.inetaddr.ttl': 0}
+[2018-09-05 13:04:50,361 DEBUG Engine] New artifact filename: /tmp/artifacts/system-1.properties
+[2018-09-05 13:04:50,361 DEBUG Engine.jmeter.JMeter] Passing JVM_ARGS: ''
+[2018-09-05 13:04:50,362 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/PluginsManagerCMD.sh', 'install-for-jmx', '/tmp/artifacts/modified_requests-1.jmx'] at .
+[2018-09-05 13:04:51,925 DEBUG Engine.jmeter.JMeter] Try to detect plugins for /tmp/artifacts/modified_requests-1.jmx
+2018-09-05 13:04:51,302 INFO o.j.r.PluginManagerCMD: Command is: install-for-jmx
+2018-09-05 13:04:51,383 INFO o.j.r.JARSourceHTTP: Found cached repo
+2018-09-05 13:04:51,544 INFO o.j.r.PluginManager: Plugins Status: [jpgc-functions=2.1, jpgc-casutg=2.5, jpgc-dummy=0.2, jpgc-ffw=2.0, jpgc-fifo=0.2, jpgc-json=2.6, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.3, jpgc-tst=2.5, jmeter-core=4.0, jmeter-ftp=4.0, jmeter-http=4.0, jmeter-jdbc=4.0, jmeter-jms=4.0, jmeter-junit=4.0, jmeter-java=4.0, jmeter-ldap=4.0, jmeter-mail=4.0, jmeter-mongodb=4.0, jmeter-native=4.0, jmeter-tcp=4.0, jmeter-components=4.0]
+2018-09-05 13:04:51,545 INFO o.j.r.PluginManagerCMD: Params line is: /tmp/artifacts/modified_requests-1.jmx
+2018-09-05 13:04:51,750 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2018-09-05 13:04:51,758 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2018-09-05 13:04:51,762 INFO o.a.j.s.SaveService: Using SaveService properties version 4.0
+2018-09-05 13:04:51,792 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2018-09-05 13:04:51,795 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2018-09-05 13:04:51,797 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [option]
+2018-09-05 13:04:51,798 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [add]
+2018-09-05 13:04:51,798 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [add_host]
+2018-09-05 13:04:51,798 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [delete]
+2018-09-05 13:04:51,798 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [delete_host]
+2018-09-05 13:04:51,798 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [use_system_dns_resolver]
+2018-09-05 13:04:51,798 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [use_custom_dns_resolver]
+2018-09-05 13:04:51,799 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_hostname_or_ip]
+2018-09-05 13:04:51,799 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_host]
+2018-09-05 13:04:51,799 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_hostname_or_ip]
+2018-09-05 13:04:51,834 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 13:04:51,834 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 13:04:51,834 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 13:04:51,835 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 13:04:51,835 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2018-09-05 13:04:51,835 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2018-09-05 13:04:51,903 INFO o.j.r.PluginManager: Finishing without changes
+
+
+[2018-09-05 13:04:51,925 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-1.out
+[2018-09-05 13:04:51,925 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-1.err
+[2018-09-05 13:04:51,926 DEBUG Engine] Module config: final-stats {'class': u'bzt.modules.reporting.FinalStatus'}
+[2018-09-05 13:04:51,926 DEBUG root] Importing module: bzt.modules.reporting
+[2018-09-05 13:04:51,932 DEBUG easyprocess] version=0.2.3
+[2018-09-05 13:04:51,933 DEBUG pyvirtualdisplay] version=0.2.1
+[2018-09-05 13:04:51,934 DEBUG root] Loading class: 'FinalStatus' from <module 'bzt.modules.reporting' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/reporting.pyc'>
+[2018-09-05 13:04:51,934 DEBUG Engine] Module config: console {'class': u'bzt.modules.console.ConsoleStatusReporter'}
+[2018-09-05 13:04:51,934 DEBUG root] Importing module: bzt.modules.console
+[2018-09-05 13:04:51,934 DEBUG root] Loading class: 'ConsoleStatusReporter' from <module 'bzt.modules.console' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/console.pyc'>
+[2018-09-05 13:04:51,934 DEBUG Engine] Module config: passfail {'class': u'bzt.modules.passfail.PassFailStatus'}
+[2018-09-05 13:04:51,934 DEBUG root] Importing module: bzt.modules.passfail
+[2018-09-05 13:04:51,934 DEBUG root] Loading class: 'PassFailStatus' from <module 'bzt.modules.passfail' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/passfail.pyc'>
+[2018-09-05 13:04:51,935 DEBUG root] Importing module: bzt.modules.passfail
+[2018-09-05 13:04:51,936 DEBUG root] Loading class: 'DataCriterion' from <module 'bzt.modules.passfail' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/passfail.pyc'>
+[2018-09-05 13:04:51,938 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 13:04:51,970 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 13:04:51,971 INFO Engine] Starting...
+[2018-09-05 13:04:51,972 DEBUG Engine] Startup <bzt.modules.monitoring.Monitoring object at 0x7f306727fd10>
+[2018-09-05 13:04:51,972 DEBUG Engine] Startup <bzt.modules.aggregator.ConsolidatingAggregator object at 0x7f306727f910>
+[2018-09-05 13:04:51,972 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x7f306a0db950>
+[2018-09-05 13:04:51,972 DEBUG Engine] Startup <bzt.modules.console.ConsoleStatusReporter object at 0x7f3065c6e110>
+[2018-09-05 13:04:51,972 INFO Engine.console] Waiting for results...
+[2018-09-05 13:04:51,972 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x7f3065c89f90>
+[2018-09-05 13:04:51,973 DEBUG Engine] Startup <bzt.modules.passfail.PassFailStatus object at 0x7f3065c89d90>
+[2018-09-05 13:04:51,973 DEBUG Engine] Startup <bzt.modules.provisioning.Local object at 0x7f30672d2690>
+[2018-09-05 13:04:51,975 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 13:04:52,007 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 13:04:52,008 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:52,009 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:04:52,009 INFO Engine.local] Starting next sequential execution: None/location-update
+[2018-09-05 13:04:52,009 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh', '-n', '-t', '/tmp/artifacts/modified_requests.jmx', '-j', '/tmp/artifacts/jmeter.log', '-q', '/tmp/artifacts/jmeter-bzt.properties', '-S', '/tmp/artifacts/system.properties'] at /bzt-configs
+[2018-09-05 13:04:52,322 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:52,322 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:04:52,322 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:53,009 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:04:53,010 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:54,010 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:04:54,010 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:55,011 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:04:55,011 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:56,012 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:04:56,012 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:57,012 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:04:57,012 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:58,013 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:04:58,014 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:58,048 INFO Engine.console] Current: 1 vu	9 succ	0 fail	0.042 avg rt	/	Cumulative: 0.042 avg rt, 0% failures
+[2018-09-05 13:04:59,013 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:04:59,014 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:04:59,054 INFO Engine.console] Current: 1 vu	159 succ	0 fail	0.005 avg rt	/	Cumulative: 0.007 avg rt, 0% failures
+[2018-09-05 13:05:00,014 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:00,014 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:00,042 INFO Engine.console] Current: 1 vu	196 succ	0 fail	0.004 avg rt	/	Cumulative: 0.006 avg rt, 0% failures
+[2018-09-05 13:05:01,015 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:01,015 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:01,044 INFO Engine.console] Current: 1 vu	200 succ	0 fail	0.004 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:02,015 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:02,016 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:02,049 INFO Engine.console] Current: 1 vu	196 succ	0 fail	0.004 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:03,016 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:03,017 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:03,048 INFO Engine.console] Current: 1 vu	201 succ	0 fail	0.004 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:04,017 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:04,018 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:04,059 INFO Engine.console] Current: 1 vu	204 succ	0 fail	0.004 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:05,018 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:05,019 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:05,044 INFO Engine.console] Current: 1 vu	221 succ	0 fail	0.004 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:06,019 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:06,019 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:06,052 INFO Engine.console] Current: 1 vu	217 succ	0 fail	0.004 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:07,020 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:07,020 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:07,054 INFO Engine.console] Current: 1 vu	213 succ	0 fail	0.004 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:08,021 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:08,021 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:08,071 INFO Engine.console] Current: 1 vu	220 succ	0 fail	0.004 avg rt	/	Cumulative: 0.004 avg rt, 0% failures
+[2018-09-05 13:05:09,022 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:09,022 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:09,049 INFO Engine.console] Current: 1 vu	208 succ	0 fail	0.004 avg rt	/	Cumulative: 0.004 avg rt, 0% failures
+[2018-09-05 13:05:10,023 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:10,024 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:10,068 INFO Engine.console] Current: 1 vu	222 succ	0 fail	0.004 avg rt	/	Cumulative: 0.004 avg rt, 0% failures
+[2018-09-05 13:05:11,024 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:11,024 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:11,048 INFO Engine.console] Current: 1 vu	208 succ	0 fail	0.004 avg rt	/	Cumulative: 0.004 avg rt, 0% failures
+[2018-09-05 13:05:12,025 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:12,025 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:12,065 INFO Engine.console] Current: 1 vu	176 succ	0 fail	0.005 avg rt	/	Cumulative: 0.004 avg rt, 0% failures
+[2018-09-05 13:05:13,026 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:13,026 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:13,052 INFO Engine.console] Current: 1 vu	204 succ	0 fail	0.005 avg rt	/	Cumulative: 0.004 avg rt, 0% failures
+[2018-09-05 13:05:14,027 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:14,027 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:14,059 INFO Engine.console] Current: 1 vu	185 succ	0 fail	0.005 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:15,028 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:15,029 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:16,029 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:16,030 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:17,030 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:17,031 INFO Engine.local] Starting next sequential execution: None/location-search-all
+[2018-09-05 13:05:17,033 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh', '-n', '-t', '/tmp/artifacts/modified_requests-1.jmx', '-j', '/tmp/artifacts/jmeter-1.log', '-q', '/tmp/artifacts/jmeter-bzt-1.properties', '-S', '/tmp/artifacts/system-1.properties'] at /bzt-configs
+[2018-09-05 13:05:17,353 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 13:05:20,061 INFO Engine.console] Current: 1 vu	183 succ	0 fail	0.005 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:22,075 INFO Engine.console] Current: 1 vu	26 succ	0 fail	0.006 avg rt	/	Cumulative: 0.005 avg rt, 0% failures
+[2018-09-05 13:05:24,118 WARNING Engine] Please wait for graceful shutdown...
+[2018-09-05 13:05:24,118 DEBUG root] Leveled up log file verbosity
+[2018-09-05 13:05:24,118 INFO Engine] Shutting down...
+[2018-09-05 13:05:24,118 DEBUG Engine] Current stop reason: None
+[2018-09-05 13:05:24,118 DEBUG Engine.local] Shutdown None/location-update
+[2018-09-05 13:05:24,118 DEBUG Engine.local] Shutdown None/location-search-all
+[2018-09-05 13:05:24,121 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 13:05:24,154 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 13:05:24,155 INFO Engine] Post-processing...
+[2018-09-05 13:05:24,156 DEBUG Engine.local] Post-process None/location-update
+[2018-09-05 13:05:24,156 DEBUG Engine] Add existing artifact (move=True): /tmp/artifacts/modified_requests.jmx
+[2018-09-05 13:05:24,156 DEBUG Engine] No need to copy /tmp/artifacts/modified_requests.jmx
+[2018-09-05 13:05:24,156 DEBUG Engine.local] Post-process None/location-search-all
+[2018-09-05 13:05:24,156 DEBUG Engine] Add existing artifact (move=True): /tmp/artifacts/modified_requests-1.jmx
+[2018-09-05 13:05:24,156 DEBUG Engine] No need to copy /tmp/artifacts/modified_requests-1.jmx
+[2018-09-05 13:05:24,156 DEBUG Engine.jmeter.JTLErrorsReader.FileReader] Reading: /tmp/artifacts/error.jtl
+[2018-09-05 13:05:24,156 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader.FileReader] Reading: /tmp/artifacts/kpi.jtl
+[2018-09-05 13:05:24,156 DEBUG Engine.jmeter.JTLReader] Buffer len: 2; Known errors count: 0
+[2018-09-05 13:05:24,156 DEBUG Engine.jmeter.JTLReader] Aggregating: 1536152713
+[2018-09-05 13:05:24,166 DEBUG Engine.consolidator] Putting datapoint 1536152713 into 1536152719
+[2018-09-05 13:05:24,166 DEBUG Engine.jmeter.JTLReader] Aggregating: 1536152714
+[2018-09-05 13:05:24,175 DEBUG Engine.consolidator] Putting datapoint 1536152714 into 1536152719
+[2018-09-05 13:05:24,175 DEBUG Engine.jmeter.JTLErrorsReader.FileReader] Reading: /tmp/artifacts/error-1.jtl
+[2018-09-05 13:05:24,175 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader.FileReader] Reading: /tmp/artifacts/kpi-1.jtl
+[2018-09-05 13:05:24,175 DEBUG Engine.jmeter.JTLReader] Buffer len: 2; Known errors count: 0
+[2018-09-05 13:05:24,175 DEBUG Engine.jmeter.JTLReader] Aggregating: 1536152721
+[2018-09-05 13:05:24,187 DEBUG Engine.jmeter.JTLReader] Aggregating: 1536152722
+[2018-09-05 13:05:24,198 DEBUG Engine.consolidator] Consolidator buffer[4]: [1536152720, 1536152721, 1536152722, 1536152719]
+[2018-09-05 13:05:24,198 DEBUG Engine.consolidator] Merging into 1536152719
+[2018-09-05 13:05:24,198 DEBUG Engine.consolidator] Merging 1536152719
+[2018-09-05 13:05:24,198 DEBUG Engine.consolidator] Merging 1536152719
+[2018-09-05 13:05:24,200 DEBUG Engine.consolidator] Merging 1536152719
+[2018-09-05 13:05:24,203 DEBUG Engine.consolidator] Processed datapoint: 1536152719/None
+[2018-09-05 13:05:24,203 DEBUG Engine.consolidator] Merging into 1536152720
+[2018-09-05 13:05:24,203 DEBUG Engine.consolidator] Merging 1536152720
+[2018-09-05 13:05:24,205 DEBUG Engine.consolidator] Processed datapoint: 1536152720/None
+[2018-09-05 13:05:24,206 DEBUG Engine.consolidator] Merging into 1536152721
+[2018-09-05 13:05:24,206 DEBUG Engine.consolidator] Merging 1536152721
+[2018-09-05 13:05:24,207 DEBUG Engine.consolidator] Processed datapoint: 1536152721/None
+[2018-09-05 13:05:24,207 DEBUG Engine.consolidator] Merging into 1536152722
+[2018-09-05 13:05:24,208 DEBUG Engine.consolidator] Merging 1536152722
+[2018-09-05 13:05:24,209 DEBUG Engine.consolidator] Processed datapoint: 1536152722/None
+[2018-09-05 13:05:24,210 INFO Engine.final-stats] Test duration: 0:00:33
+[2018-09-05 13:05:24,210 INFO Engine.final-stats] Samples count: 5000, 0.00% failures
+[2018-09-05 13:05:24,210 INFO Engine.final-stats] Average times: total 0.004, latency 0.004, connect 0.000
+[2018-09-05 13:05:24,212 INFO Engine.final-stats] Percentiles:
++---------------+---------------+
+| Percentile, % | Resp. Time, s |
++---------------+---------------+
+|           0.0 |         0.002 |
+|          50.0 |         0.004 |
+|          90.0 |         0.006 |
+|          95.0 |         0.007 |
+|          99.0 |         0.009 |
+|          99.9 |         0.024 |
+|         100.0 |         0.251 |
++---------------+---------------+
+[2018-09-05 13:05:24,213 INFO Engine.final-stats] Request label stats:
++----------------------------+--------+---------+--------+-------+
+| label                      | status |    succ | avg_rt | error |
++----------------------------+--------+---------+--------+-------+
+| CreateLocation             |   OK   | 100.00% |  0.004 |       |
+| GetSingleLocation          |   OK   | 100.00% |  0.003 |       |
+| SearchLocation             |   OK   | 100.00% |  0.004 |       |
+| SearchLocationByIdentifier |   OK   | 100.00% |  0.005 |       |
+| UpdateLocation             |   OK   | 100.00% |  0.006 |       |
++----------------------------+--------+---------+--------+-------+
+[2018-09-05 13:05:24,213 DEBUG Engine.console] No logger_handler or orig_stream was detected
+[2018-09-05 13:05:24,214 INFO Engine.final-stats] Test duration: 0:00:33
+[2018-09-05 13:05:24,214 INFO Engine.final-stats] Samples count: 5000, 0.00% failures
+[2018-09-05 13:05:24,214 INFO Engine.final-stats] Average times: total 0.004, latency 0.004, connect 0.000
+[2018-09-05 13:05:24,214 INFO Engine.final-stats] Percentiles:
++---------------+---------------+
+| Percentile, % | Resp. Time, s |
++---------------+---------------+
+|           0.0 |         0.002 |
+|          50.0 |         0.004 |
+|          90.0 |         0.006 |
+|          95.0 |         0.007 |
+|          99.0 |         0.009 |
+|          99.9 |         0.024 |
+|         100.0 |         0.251 |
++---------------+---------------+
+[2018-09-05 13:05:24,215 INFO Engine.final-stats] Request label stats:
++----------------------------+--------+---------+--------+-------+
+| label                      | status |    succ | avg_rt | error |
++----------------------------+--------+---------+--------+-------+
+| CreateLocation             |   OK   | 100.00% |  0.004 |       |
+| GetSingleLocation          |   OK   | 100.00% |  0.003 |       |
+| SearchLocation             |   OK   | 100.00% |  0.004 |       |
+| SearchLocationByIdentifier |   OK   | 100.00% |  0.005 |       |
+| UpdateLocation             |   OK   | 100.00% |  0.006 |       |
++----------------------------+--------+---------+--------+-------+
+[2018-09-05 13:05:24,216 INFO Engine.final-stats] Dumping final status as XML: /tmp/artifacts/stats.xml
+[2018-09-05 13:05:24,225 DEBUG root] 1536152722 Alert: failures>0% for -9223372036854775806 sec: False
+[2018-09-05 13:05:24,228 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 13:05:24,261 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 13:05:24,262 INFO root] Artifacts dir: /tmp/artifacts
+[2018-09-05 13:05:24,262 INFO root] Done performing with code: 0
+[2018-09-05 13:05:24,262 DEBUG root] Closing log handler: /tmp/artifacts/bzt.log

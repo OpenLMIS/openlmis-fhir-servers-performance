@@ -1,0 +1,1088 @@
+[2018-09-05 12:35:06,450 INFO root] Taurus CLI Tool v1.13.0
+[2018-09-05 12:35:06,450 DEBUG root] Command-line options: {'verbose': None, 'no_system_configs': None, 'quiet': None, 'log': '/tmp/artifacts/bzt.log', 'option': ['reporting.2.dump-xml=/tmp/artifacts/stats.xml'], 'aliases': []}
+[2018-09-05 12:35:06,451 DEBUG root] Python: CPython 2.7.12
+[2018-09-05 12:35:06,451 DEBUG root] OS: ('Linux', '6b25b557f369', '4.15.0-33-generic', '#36-Ubuntu SMP Wed Aug 15 16:00:05 UTC 2018', 'x86_64', 'x86_64')
+[2018-09-05 12:35:06,451 INFO root] Starting with configs: ['config.yml']
+[2018-09-05 12:35:06,451 DEBUG root] Using personal config: /root/.bzt-rc
+[2018-09-05 12:35:06,451 INFO Engine] Configuring...
+[2018-09-05 12:35:06,451 DEBUG Engine] Reading extension configs from: /etc/bzt.d
+[2018-09-05 12:35:06,452 DEBUG Engine] Base configs list: ['/usr/local/lib/python2.7/dist-packages/bzt/resources/base-config.yml', '/etc/bzt.d/50-pbench-enhanced.json', '/etc/bzt.d/90-artifacts-dir.json', '/etc/bzt.d/99-zinstallID.json']
+[2018-09-05 12:35:06,452 DEBUG Engine.Configuration] Configs: ['/usr/local/lib/python2.7/dist-packages/bzt/resources/base-config.yml', '/etc/bzt.d/50-pbench-enhanced.json', '/etc/bzt.d/90-artifacts-dir.json', '/etc/bzt.d/99-zinstallID.json']
+[2018-09-05 12:35:06,452 DEBUG Engine.Configuration] Reading /usr/local/lib/python2.7/dist-packages/bzt/resources/base-config.yml as YAML
+[2018-09-05 12:35:06,480 DEBUG Engine.Configuration] Reading /etc/bzt.d/50-pbench-enhanced.json as YAML
+[2018-09-05 12:35:06,481 DEBUG Engine.Configuration] Reading /etc/bzt.d/90-artifacts-dir.json as YAML
+[2018-09-05 12:35:06,481 DEBUG Engine.Configuration] Reading /etc/bzt.d/99-zinstallID.json as YAML
+[2018-09-05 12:35:06,482 DEBUG Engine] User configs list: ['/root/.bzt-rc', 'config.yml']
+[2018-09-05 12:35:06,482 DEBUG Engine.Configuration] Configs: ['/root/.bzt-rc', 'config.yml']
+[2018-09-05 12:35:06,482 DEBUG Engine.Configuration] Reading /root/.bzt-rc as YAML
+[2018-09-05 12:35:06,486 DEBUG Engine.Configuration] Reading config.yml as YAML
+[2018-09-05 12:35:06,500 DEBUG Engine.Configuration] Configs: ['/root/.bzt-rc', 'config.yml']
+[2018-09-05 12:35:06,501 DEBUG Engine.Configuration] Reading /root/.bzt-rc as YAML
+[2018-09-05 12:35:06,505 DEBUG Engine.Configuration] Reading config.yml as YAML
+[2018-09-05 12:35:06,520 DEBUG ConfigOverrider] Applying reporting.2.dump-xml=/tmp/artifacts/stats.xml
+[2018-09-05 12:35:06,520 DEBUG ConfigOverrider] Applying: [dump-xml]=/tmp/artifacts/stats.xml
+[2018-09-05 12:35:06,520 DEBUG ConfigOverrider] Parsed override value: '/tmp/artifacts/stats.xml' -> '/tmp/artifacts/stats.xml' (<type 'str'>)
+[2018-09-05 12:35:06,519 DEBUG Engine] Requesting updates info: http://gettaurus.org/updates/?version=1.13.0&installID=Docker
+[2018-09-05 12:35:06,520 INFO Engine] Artifacts dir: /tmp/artifacts
+[2018-09-05 12:35:06,520 DEBUG HTTPClient] Making HTTP request GET http://gettaurus.org/updates/?version=1.13.0&installID=Docker
+[2018-09-05 12:35:06,522 DEBUG Engine] New artifact filename: /tmp/artifacts/effective
+[2018-09-05 12:35:06,525 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 12:35:06,532 DEBUG urllib3.connectionpool] Starting new HTTP connection (1): gettaurus.org:80
+[2018-09-05 12:35:06,567 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 12:35:06,568 DEBUG Engine] New artifact filename: /tmp/artifacts/merged.yml
+[2018-09-05 12:35:06,569 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/merged.yml
+[2018-09-05 12:35:06,580 DEBUG Engine] New artifact filename: /tmp/artifacts/merged.json
+[2018-09-05 12:35:06,581 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/merged.json
+[2018-09-05 12:35:06,582 DEBUG Engine] Add existing artifact (move=False): config.yml
+[2018-09-05 12:35:06,582 DEBUG Engine] Copying config.yml to /tmp/artifacts/config.yml
+[2018-09-05 12:35:06,582 DEBUG Engine.Environment] Replace 'TAURUS_ARTIFACTS_DIR' in environment
+[2018-09-05 12:35:06,583 DEBUG root] Closing log handler: /tmp/artifacts/bzt.log
+[2018-09-05 12:35:06,583 DEBUG root] Switched writing logs to /tmp/artifacts/bzt.log
+[2018-09-05 12:35:06,583 DEBUG root] Linting config
+[2018-09-05 12:35:06,586 INFO Engine] Preparing...
+[2018-09-05 12:35:06,587 DEBUG Engine] Module config: consolidator {'class': u'bzt.modules.aggregator.ConsolidatingAggregator'}
+[2018-09-05 12:35:06,587 DEBUG root] Importing module: bzt.modules.aggregator
+[2018-09-05 12:35:06,647 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/aggregator.pyc'>
+[2018-09-05 12:35:06,648 DEBUG Engine.consolidator] Buffer scaling setup: percentile 95.0 from [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0] selected
+[2018-09-05 12:35:06,648 DEBUG Engine] Module config: monitoring {'class': u'bzt.modules.monitoring.Monitoring'}
+[2018-09-05 12:35:06,648 DEBUG root] Importing module: bzt.modules.monitoring
+[2018-09-05 12:35:06,649 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/monitoring.pyc'>
+[2018-09-05 12:35:06,649 DEBUG Engine] Module config: local {'sequential': True, 'class': u'bzt.modules.provisioning.Local'}
+[2018-09-05 12:35:06,649 DEBUG root] Importing module: bzt.modules.provisioning
+[2018-09-05 12:35:06,649 DEBUG root] Loading class: 'Local' from <module 'bzt.modules.provisioning' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/provisioning.pyc'>
+[2018-09-05 12:35:06,650 DEBUG Engine] Module config: jmeter {'xml-jtl-flags': {'responseData': True}, 'properties': {'jmeter.save.saveservice.autoflush': u'true', 'jmeter.save.saveservice.connect_time': u'true', 'scenario-concurrency': 1, 'scenario-iterations': 1000, 'summariser.name': u'', 'fhir-server-url': u'http://localhost/hapifhir/baseDstu3/Location', 'jmeterengine.force.system.exit': u'true'}, 'plugins': [u'jpgc-casutg', u'jpgc-dummy', u'jpgc-ffw', u'jpgc-fifo', u'jpgc-functions', u'jpgc-json', u'jpgc-perfmon', u'jpgc-prmctl', u'jpgc-tst'], 'class': u'bzt.modules.jmeter.JMeterExecutor', 'protocol-handlers': {'http': u'bzt.jmx.http.HTTPProtocolHandler'}}
+[2018-09-05 12:35:06,650 DEBUG root] Importing module: bzt.modules.jmeter
+[2018-09-05 12:35:06,657 DEBUG root] Loading class: 'JMeterExecutor' from <module 'bzt.modules.jmeter' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/jmeter.pyc'>
+[2018-09-05 12:35:06,657 DEBUG Engine.local] Preparing executor: None/140690374736720
+[2018-09-05 12:35:06,658 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter.log
+[2018-09-05 12:35:06,658 DEBUG Engine.jmeter] Checking if port 4445 is free
+[2018-09-05 12:35:06,658 DEBUG Engine.jmeter] Port 4445 is free
+[2018-09-05 12:35:06,658 DEBUG Engine.jmeter] Using port 4445 for management
+[2018-09-05 12:35:06,658 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2018-09-05 12:35:06,708 DEBUG Engine.jmeter.JavaVM] JavaVM output: openjdk version "1.8.0_181"
+OpenJDK Runtime Environment (build 1.8.0_181-8u181-b13-0ubuntu0.16.04.1-b13)
+OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+[2018-09-05 12:35:06,708 DEBUG Engine.jmeter.TclLibrary] We don't need to check tcl library on this platform
+[2018-09-05 12:35:06,708 DEBUG Engine.jmeter.JMeter] Trying jmeter: /root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh
+[2018-09-05 12:35:06,710 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh', '-j', '/tmp/jmetermsllYflog', '--version'] at .
+[2018-09-05 12:35:06,725 DEBUG urllib3.connectionpool] http://gettaurus.org:80 "GET /updates/?version=1.13.0&installID=Docker HTTP/1.1" 200 60
+[2018-09-05 12:35:06,727 DEBUG Engine] Taurus updates info: {u'needsUpgrade': False, u'latest': u'1.13.0'}
+[2018-09-05 12:35:06,727 DEBUG Engine] Installation is up-to-date
+[2018-09-05 12:35:07,924 DEBUG Engine.jmeter.JMeter] JMeter check:     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____     
+   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \   
+  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) | 
+ / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <  
+/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 4.0 r1823414  
+
+Copyright (c) 1999-2018 The Apache Software Foundation
+
+ / None
+[2018-09-05 12:35:07,924 DEBUG Engine] New artifact filename: /tmp/artifacts/requests.jmx
+[2018-09-05 12:35:07,925 DEBUG root] Importing module: bzt.jmx.http
+[2018-09-05 12:35:07,925 DEBUG root] Loading class: 'HTTPProtocolHandler' from <module 'bzt.jmx.http' from '/usr/local/lib/python2.7/dist-packages/bzt/jmx/http.pyc'>
+[2018-09-05 12:35:07,929 DEBUG JMeterScenarioBuilder] Saving JMX to: /tmp/artifacts/requests.jmx
+[2018-09-05 12:35:07,929 DEBUG Engine.jmeter] Load: LoadSpec(concurrency=u'${__P(scenario-concurrency)}', throughput=None, ramp_up=None, hold=0, iterations=u'${__P(scenario-iterations)}', duration=None, steps=None)
+[2018-09-05 12:35:07,931 DEBUG Engine] New artifact filename: /tmp/artifacts/kpi.jtl
+[2018-09-05 12:35:07,931 DEBUG Engine] New artifact filename: /tmp/artifacts/error.jtl
+[2018-09-05 12:35:07,932 DEBUG Engine.jmeter.LoadSettingsProcessor] Thread group detection: duration not found, regular ThreadGroup will be used
+[2018-09-05 12:35:07,933 DEBUG Engine.jmeter.LoadSettingsProcessor.ThreadGroupHandler] Converting ThreadGroup (location-update) to ThreadGroup and apply load parameters
+[2018-09-05 12:35:07,933 DEBUG Engine] New artifact filename: /tmp/artifacts/modified_requests.jmx
+[2018-09-05 12:35:07,933 DEBUG JMX] Saving JMX to: /tmp/artifacts/modified_requests.jmx
+[2018-09-05 12:35:07,934 DEBUG Engine.jmeter] Additional properties: {'jmeter.save.saveservice.autoflush': u'true', 'jmeter.save.saveservice.connect_time': u'true', 'user.classpath': '/tmp/artifacts:/tmp/artifacts', 'sampleresult.default.encoding': 'UTF-8', 'jmeterengine.nongui.maxport': 4445, 'scenario-iterations': 1000, 'summariser.name': u'', 'fhir-server-url': u'http://localhost/hapifhir/baseDstu3/Location', 'jmeterengine.force.system.exit': u'true', 'jmeter.save.saveservice.timestamp_format': 'ms', 'scenario-concurrency': 1, 'jmeterengine.nongui.port': 4445}
+[2018-09-05 12:35:07,934 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-bzt.properties
+[2018-09-05 12:35:07,934 DEBUG Engine.jmeter] Additional system properties {'sun.net.inetaddr.ttl': 0}
+[2018-09-05 12:35:07,934 DEBUG Engine] New artifact filename: /tmp/artifacts/system.properties
+[2018-09-05 12:35:07,934 DEBUG Engine.jmeter.JMeter] Passing JVM_ARGS: ''
+[2018-09-05 12:35:07,934 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/PluginsManagerCMD.sh', 'install-for-jmx', '/tmp/artifacts/modified_requests.jmx'] at .
+[2018-09-05 12:35:10,741 DEBUG Engine.jmeter.JMeter] Try to detect plugins for /tmp/artifacts/modified_requests.jmx
+2018-09-05 12:35:08,858 INFO o.j.r.PluginManagerCMD: Command is: install-for-jmx
+2018-09-05 12:35:08,886 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=linux-27cd6ef1d85ff2af0d900f68bb83d813-nongui
+2018-09-05 12:35:10,334 INFO o.j.r.PluginManager: Plugins Status: [jpgc-functions=2.1, jpgc-casutg=2.5, jpgc-dummy=0.2, jpgc-ffw=2.0, jpgc-fifo=0.2, jpgc-json=2.6, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.3, jpgc-tst=2.5, jmeter-core=4.0, jmeter-ftp=4.0, jmeter-http=4.0, jmeter-jdbc=4.0, jmeter-jms=4.0, jmeter-junit=4.0, jmeter-java=4.0, jmeter-ldap=4.0, jmeter-mail=4.0, jmeter-mongodb=4.0, jmeter-native=4.0, jmeter-tcp=4.0, jmeter-components=4.0]
+2018-09-05 12:35:10,336 INFO o.j.r.PluginManagerCMD: Params line is: /tmp/artifacts/modified_requests.jmx
+2018-09-05 12:35:10,584 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2018-09-05 12:35:10,592 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2018-09-05 12:35:10,597 INFO o.a.j.s.SaveService: Using SaveService properties version 4.0
+2018-09-05 12:35:10,625 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2018-09-05 12:35:10,629 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2018-09-05 12:35:10,632 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [option]
+2018-09-05 12:35:10,632 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [add]
+2018-09-05 12:35:10,633 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [add_host]
+2018-09-05 12:35:10,633 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [delete]
+2018-09-05 12:35:10,633 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [delete_host]
+2018-09-05 12:35:10,633 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [use_system_dns_resolver]
+2018-09-05 12:35:10,633 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [use_custom_dns_resolver]
+2018-09-05 12:35:10,633 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_hostname_or_ip]
+2018-09-05 12:35:10,633 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_host]
+2018-09-05 12:35:10,633 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_hostname_or_ip]
+2018-09-05 12:35:10,672 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 12:35:10,672 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 12:35:10,672 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 12:35:10,672 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 12:35:10,672 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2018-09-05 12:35:10,672 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2018-09-05 12:35:10,718 INFO o.j.r.PluginManager: Finishing without changes
+
+
+[2018-09-05 12:35:10,741 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter.out
+[2018-09-05 12:35:10,741 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter.err
+[2018-09-05 12:35:10,742 DEBUG Engine.local] Preparing executor: None/140689878105232
+[2018-09-05 12:35:10,742 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-1.log
+[2018-09-05 12:35:10,742 DEBUG Engine.jmeter] Checking if port 4446 is free
+[2018-09-05 12:35:10,743 DEBUG Engine.jmeter] Port 4446 is free
+[2018-09-05 12:35:10,743 DEBUG Engine.jmeter] Using port 4446 for management
+[2018-09-05 12:35:10,743 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2018-09-05 12:35:10,790 DEBUG Engine.jmeter.JavaVM] JavaVM output: openjdk version "1.8.0_181"
+OpenJDK Runtime Environment (build 1.8.0_181-8u181-b13-0ubuntu0.16.04.1-b13)
+OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+[2018-09-05 12:35:10,790 DEBUG Engine.jmeter.TclLibrary] We don't need to check tcl library on this platform
+[2018-09-05 12:35:10,791 DEBUG Engine.jmeter.JMeter] Trying jmeter: /root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh
+[2018-09-05 12:35:10,791 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh', '-j', '/tmp/jmeter3hnoTGlog', '--version'] at .
+[2018-09-05 12:35:12,004 DEBUG Engine.jmeter.JMeter] JMeter check:     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____     
+   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \   
+  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) | 
+ / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <  
+/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 4.0 r1823414  
+
+Copyright (c) 1999-2018 The Apache Software Foundation
+
+ / None
+[2018-09-05 12:35:12,004 DEBUG Engine] New artifact filename: /tmp/artifacts/requests-1.jmx
+[2018-09-05 12:35:12,005 DEBUG root] Importing module: bzt.jmx.http
+[2018-09-05 12:35:12,005 DEBUG root] Loading class: 'HTTPProtocolHandler' from <module 'bzt.jmx.http' from '/usr/local/lib/python2.7/dist-packages/bzt/jmx/http.pyc'>
+[2018-09-05 12:35:12,006 DEBUG JMeterScenarioBuilder] Saving JMX to: /tmp/artifacts/requests-1.jmx
+[2018-09-05 12:35:12,006 DEBUG Engine.jmeter] Load: LoadSpec(concurrency=u'${__P(scenario-concurrency)}', throughput=None, ramp_up=None, hold=0, iterations=u'${__P(scenario-iterations)}', duration=None, steps=None)
+[2018-09-05 12:35:12,007 DEBUG Engine] New artifact filename: /tmp/artifacts/kpi-1.jtl
+[2018-09-05 12:35:12,008 DEBUG Engine] New artifact filename: /tmp/artifacts/error-1.jtl
+[2018-09-05 12:35:12,008 DEBUG Engine.jmeter.LoadSettingsProcessor] Thread group detection: duration not found, regular ThreadGroup will be used
+[2018-09-05 12:35:12,009 DEBUG Engine.jmeter.LoadSettingsProcessor.ThreadGroupHandler] Converting ThreadGroup (location-search-all) to ThreadGroup and apply load parameters
+[2018-09-05 12:35:12,009 DEBUG Engine] New artifact filename: /tmp/artifacts/modified_requests-1.jmx
+[2018-09-05 12:35:12,009 DEBUG JMX] Saving JMX to: /tmp/artifacts/modified_requests-1.jmx
+[2018-09-05 12:35:12,009 DEBUG Engine.jmeter] Additional properties: {'jmeter.save.saveservice.autoflush': u'true', 'jmeter.save.saveservice.connect_time': u'true', 'user.classpath': '/tmp/artifacts:/tmp/artifacts', 'sampleresult.default.encoding': 'UTF-8', 'jmeterengine.nongui.maxport': 4446, 'scenario-iterations': 1000, 'summariser.name': u'', 'fhir-server-url': u'http://localhost/hapifhir/baseDstu3/Location', 'jmeterengine.force.system.exit': u'true', 'jmeter.save.saveservice.timestamp_format': 'ms', 'scenario-concurrency': 1, 'jmeterengine.nongui.port': 4446}
+[2018-09-05 12:35:12,009 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-bzt-1.properties
+[2018-09-05 12:35:12,010 DEBUG Engine.jmeter] Additional system properties {'sun.net.inetaddr.ttl': 0}
+[2018-09-05 12:35:12,010 DEBUG Engine] New artifact filename: /tmp/artifacts/system-1.properties
+[2018-09-05 12:35:12,010 DEBUG Engine.jmeter.JMeter] Passing JVM_ARGS: ''
+[2018-09-05 12:35:12,010 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/PluginsManagerCMD.sh', 'install-for-jmx', '/tmp/artifacts/modified_requests-1.jmx'] at .
+[2018-09-05 12:35:13,643 DEBUG Engine.jmeter.JMeter] Try to detect plugins for /tmp/artifacts/modified_requests-1.jmx
+2018-09-05 12:35:12,984 INFO o.j.r.PluginManagerCMD: Command is: install-for-jmx
+2018-09-05 12:35:13,061 INFO o.j.r.JARSourceHTTP: Found cached repo
+2018-09-05 12:35:13,235 INFO o.j.r.PluginManager: Plugins Status: [jpgc-functions=2.1, jpgc-casutg=2.5, jpgc-dummy=0.2, jpgc-ffw=2.0, jpgc-fifo=0.2, jpgc-json=2.6, jpgc-prmctl=0.4, jpgc-perfmon=2.1, jpgc-plugins-manager=1.3, jpgc-tst=2.5, jmeter-core=4.0, jmeter-ftp=4.0, jmeter-http=4.0, jmeter-jdbc=4.0, jmeter-jms=4.0, jmeter-junit=4.0, jmeter-java=4.0, jmeter-ldap=4.0, jmeter-mail=4.0, jmeter-mongodb=4.0, jmeter-native=4.0, jmeter-tcp=4.0, jmeter-components=4.0]
+2018-09-05 12:35:13,237 INFO o.j.r.PluginManagerCMD: Params line is: /tmp/artifacts/modified_requests-1.jmx
+2018-09-05 12:35:13,459 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2018-09-05 12:35:13,469 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2018-09-05 12:35:13,475 INFO o.a.j.s.SaveService: Using SaveService properties version 4.0
+2018-09-05 12:35:13,502 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2018-09-05 12:35:13,505 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2018-09-05 12:35:13,508 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [option]
+2018-09-05 12:35:13,508 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [add]
+2018-09-05 12:35:13,508 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [add_host]
+2018-09-05 12:35:13,508 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [delete]
+2018-09-05 12:35:13,508 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [delete_host]
+2018-09-05 12:35:13,508 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [use_system_dns_resolver]
+2018-09-05 12:35:13,508 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [use_custom_dns_resolver]
+2018-09-05 12:35:13,509 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_hostname_or_ip]
+2018-09-05 12:35:13,509 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_host]
+2018-09-05 12:35:13,509 WARN o.a.j.u.JMeterUtils: ERROR! Resource string not found: [dns_hostname_or_ip]
+2018-09-05 12:35:13,543 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 12:35:13,543 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 12:35:13,544 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 12:35:13,544 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2018-09-05 12:35:13,544 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2018-09-05 12:35:13,544 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2018-09-05 12:35:13,620 INFO o.j.r.PluginManager: Finishing without changes
+
+
+[2018-09-05 12:35:13,643 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-1.out
+[2018-09-05 12:35:13,643 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-1.err
+[2018-09-05 12:35:13,644 DEBUG Engine] Module config: final-stats {'class': u'bzt.modules.reporting.FinalStatus'}
+[2018-09-05 12:35:13,644 DEBUG root] Importing module: bzt.modules.reporting
+[2018-09-05 12:35:13,650 DEBUG easyprocess] version=0.2.3
+[2018-09-05 12:35:13,651 DEBUG pyvirtualdisplay] version=0.2.1
+[2018-09-05 12:35:13,652 DEBUG root] Loading class: 'FinalStatus' from <module 'bzt.modules.reporting' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/reporting.pyc'>
+[2018-09-05 12:35:13,652 DEBUG Engine] Module config: console {'class': u'bzt.modules.console.ConsoleStatusReporter'}
+[2018-09-05 12:35:13,652 DEBUG root] Importing module: bzt.modules.console
+[2018-09-05 12:35:13,652 DEBUG root] Loading class: 'ConsoleStatusReporter' from <module 'bzt.modules.console' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/console.pyc'>
+[2018-09-05 12:35:13,652 DEBUG Engine] Module config: passfail {'class': u'bzt.modules.passfail.PassFailStatus'}
+[2018-09-05 12:35:13,652 DEBUG root] Importing module: bzt.modules.passfail
+[2018-09-05 12:35:13,652 DEBUG root] Loading class: 'PassFailStatus' from <module 'bzt.modules.passfail' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/passfail.pyc'>
+[2018-09-05 12:35:13,653 DEBUG root] Importing module: bzt.modules.passfail
+[2018-09-05 12:35:13,654 DEBUG root] Loading class: 'DataCriterion' from <module 'bzt.modules.passfail' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/passfail.pyc'>
+[2018-09-05 12:35:13,656 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 12:35:13,691 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 12:35:13,692 INFO Engine] Starting...
+[2018-09-05 12:35:13,692 DEBUG Engine] Startup <bzt.modules.monitoring.Monitoring object at 0x7ff504e887d0>
+[2018-09-05 12:35:13,692 DEBUG Engine] Startup <bzt.modules.aggregator.ConsolidatingAggregator object at 0x7ff504e88d90>
+[2018-09-05 12:35:13,692 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x7ff507ce4950>
+[2018-09-05 12:35:13,693 DEBUG Engine] Startup <bzt.modules.console.ConsoleStatusReporter object at 0x7ff4fd173210>
+[2018-09-05 12:35:13,693 INFO Engine.console] Waiting for results...
+[2018-09-05 12:35:13,693 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x7ff4fd187e10>
+[2018-09-05 12:35:13,693 DEBUG Engine] Startup <bzt.modules.passfail.PassFailStatus object at 0x7ff4fd193e90>
+[2018-09-05 12:35:13,693 DEBUG Engine] Startup <bzt.modules.provisioning.Local object at 0x7ff504edb690>
+[2018-09-05 12:35:13,696 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 12:35:13,729 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 12:35:13,730 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:13,730 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:13,730 INFO Engine.local] Starting next sequential execution: None/location-update
+[2018-09-05 12:35:13,731 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh', '-n', '-t', '/tmp/artifacts/modified_requests.jmx', '-j', '/tmp/artifacts/jmeter.log', '-q', '/tmp/artifacts/jmeter-bzt.properties', '-S', '/tmp/artifacts/system.properties'] at /bzt-configs
+[2018-09-05 12:35:14,041 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:14,041 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:14,041 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:14,731 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:14,731 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:15,732 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:15,732 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:16,733 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:16,733 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:17,734 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:17,734 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:18,734 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:18,734 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:19,735 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:19,735 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:20,736 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:20,736 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:20,739 INFO Engine.jmeter.JTLReader] Changed data analysis delay to 5s
+[2018-09-05 12:35:21,737 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:21,737 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:22,738 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:22,738 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:23,739 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:23,739 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:23,750 INFO Engine.console] Current: 1 vu	1 succ	0 fail	2.724 avg rt	/	Cumulative: 2.724 avg rt, 0% failures
+[2018-09-05 12:35:24,740 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:24,741 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:25,741 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:25,741 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:25,743 INFO Engine.jmeter.JTLReader] Changed data analysis delay to 2s
+[2018-09-05 12:35:25,766 INFO Engine.console] Current: 1 vu	12 succ	0 fail	0.080 avg rt	/	Cumulative: 0.143 avg rt, 0% failures
+[2018-09-05 12:35:26,742 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:26,742 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:26,762 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.065 avg rt	/	Cumulative: 0.122 avg rt, 0% failures
+[2018-09-05 12:35:27,742 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:27,743 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:27,769 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.064 avg rt	/	Cumulative: 0.110 avg rt, 0% failures
+[2018-09-05 12:35:28,743 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:28,744 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:28,753 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.085 avg rt	/	Cumulative: 0.106 avg rt, 0% failures
+[2018-09-05 12:35:29,744 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:29,745 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:29,761 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.068 avg rt	/	Cumulative: 0.101 avg rt, 0% failures
+[2018-09-05 12:35:30,746 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:30,746 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:30,783 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.075 avg rt	/	Cumulative: 0.097 avg rt, 0% failures
+[2018-09-05 12:35:31,746 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:31,746 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:31,758 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.057 avg rt	/	Cumulative: 0.093 avg rt, 0% failures
+[2018-09-05 12:35:32,747 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:32,748 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:32,792 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.069 avg rt	/	Cumulative: 0.090 avg rt, 0% failures
+[2018-09-05 12:35:33,748 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:33,749 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:33,760 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.088 avg rt, 0% failures
+[2018-09-05 12:35:34,750 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:34,750 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:34,780 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.067 avg rt	/	Cumulative: 0.086 avg rt, 0% failures
+[2018-09-05 12:35:35,751 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:35,751 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:35,788 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.083 avg rt, 0% failures
+[2018-09-05 12:35:36,752 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:36,752 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:36,762 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.067 avg rt	/	Cumulative: 0.082 avg rt, 0% failures
+[2018-09-05 12:35:37,753 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:37,753 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:37,791 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.081 avg rt, 0% failures
+[2018-09-05 12:35:38,754 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:38,754 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:38,763 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.070 avg rt	/	Cumulative: 0.080 avg rt, 0% failures
+[2018-09-05 12:35:39,754 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:39,754 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:39,768 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.062 avg rt	/	Cumulative: 0.079 avg rt, 0% failures
+[2018-09-05 12:35:40,755 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:40,755 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:40,773 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.067 avg rt	/	Cumulative: 0.078 avg rt, 0% failures
+[2018-09-05 12:35:41,756 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:41,756 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:41,780 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.060 avg rt	/	Cumulative: 0.077 avg rt, 0% failures
+[2018-09-05 12:35:42,757 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:42,757 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:42,767 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.076 avg rt, 0% failures
+[2018-09-05 12:35:43,758 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:43,758 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:43,788 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.061 avg rt	/	Cumulative: 0.076 avg rt, 0% failures
+[2018-09-05 12:35:44,759 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:44,759 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:44,768 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.065 avg rt	/	Cumulative: 0.075 avg rt, 0% failures
+[2018-09-05 12:35:45,760 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:45,760 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:45,784 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.051 avg rt	/	Cumulative: 0.074 avg rt, 0% failures
+[2018-09-05 12:35:46,761 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:46,761 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:46,772 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.064 avg rt	/	Cumulative: 0.074 avg rt, 0% failures
+[2018-09-05 12:35:47,762 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:47,763 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:47,801 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.058 avg rt	/	Cumulative: 0.073 avg rt, 0% failures
+[2018-09-05 12:35:48,763 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:48,764 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:48,779 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.073 avg rt, 0% failures
+[2018-09-05 12:35:49,764 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:49,765 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:49,802 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.061 avg rt	/	Cumulative: 0.072 avg rt, 0% failures
+[2018-09-05 12:35:50,765 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:50,765 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:50,779 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.067 avg rt	/	Cumulative: 0.072 avg rt, 0% failures
+[2018-09-05 12:35:51,766 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:51,766 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:51,789 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.056 avg rt	/	Cumulative: 0.071 avg rt, 0% failures
+[2018-09-05 12:35:52,767 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:52,767 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:52,778 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.070 avg rt	/	Cumulative: 0.071 avg rt, 0% failures
+[2018-09-05 12:35:53,768 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:53,768 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:53,813 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.056 avg rt	/	Cumulative: 0.071 avg rt, 0% failures
+[2018-09-05 12:35:54,769 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:54,769 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:54,790 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.063 avg rt	/	Cumulative: 0.071 avg rt, 0% failures
+[2018-09-05 12:35:55,770 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:55,770 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:55,811 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.060 avg rt	/	Cumulative: 0.070 avg rt, 0% failures
+[2018-09-05 12:35:56,771 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:56,771 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:56,782 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.062 avg rt	/	Cumulative: 0.070 avg rt, 0% failures
+[2018-09-05 12:35:57,772 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:57,772 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:57,794 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.065 avg rt	/	Cumulative: 0.070 avg rt, 0% failures
+[2018-09-05 12:35:58,773 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:58,773 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:58,807 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.059 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:35:59,774 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:35:59,775 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:35:59,822 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.065 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:36:00,775 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:00,775 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:00,787 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.068 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:36:01,776 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:01,776 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:01,814 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:36:02,777 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:02,777 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:02,797 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.074 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:36:03,778 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:03,778 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:03,793 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.070 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:36:04,779 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:04,780 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:04,821 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.060 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:36:05,780 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:05,780 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:05,793 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:36:06,781 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:06,781 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:06,803 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:36:07,782 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:07,783 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:07,842 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.069 avg rt, 0% failures
+[2018-09-05 12:36:08,783 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:08,783 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:08,794 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.056 avg rt	/	Cumulative: 0.068 avg rt, 0% failures
+[2018-09-05 12:36:09,784 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:09,784 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:09,821 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.068 avg rt, 0% failures
+[2018-09-05 12:36:10,785 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:10,786 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:10,798 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.063 avg rt	/	Cumulative: 0.068 avg rt, 0% failures
+[2018-09-05 12:36:11,786 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:11,786 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:11,815 INFO Engine.console] Current: 1 vu	12 succ	0 fail	0.076 avg rt	/	Cumulative: 0.068 avg rt, 0% failures
+[2018-09-05 12:36:12,787 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:12,787 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:12,798 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.053 avg rt	/	Cumulative: 0.068 avg rt, 0% failures
+[2018-09-05 12:36:13,788 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:13,789 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:13,822 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.070 avg rt	/	Cumulative: 0.068 avg rt, 0% failures
+[2018-09-05 12:36:14,789 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:14,789 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:14,800 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.067 avg rt	/	Cumulative: 0.068 avg rt, 0% failures
+[2018-09-05 12:36:15,790 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:15,790 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:15,813 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.066 avg rt	/	Cumulative: 0.068 avg rt, 0% failures
+[2018-09-05 12:36:16,791 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:16,791 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:16,815 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.051 avg rt	/	Cumulative: 0.067 avg rt, 0% failures
+[2018-09-05 12:36:17,792 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:17,792 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:17,801 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.070 avg rt	/	Cumulative: 0.067 avg rt, 0% failures
+[2018-09-05 12:36:18,793 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:18,793 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:18,809 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.067 avg rt, 0% failures
+[2018-09-05 12:36:19,794 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:19,794 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:19,834 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.067 avg rt, 0% failures
+[2018-09-05 12:36:20,795 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:20,795 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:20,804 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.060 avg rt	/	Cumulative: 0.067 avg rt, 0% failures
+[2018-09-05 12:36:21,796 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:21,796 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:21,833 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.067 avg rt, 0% failures
+[2018-09-05 12:36:22,797 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:22,797 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:22,807 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.052 avg rt	/	Cumulative: 0.067 avg rt, 0% failures
+[2018-09-05 12:36:23,798 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:23,798 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:23,816 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.073 avg rt	/	Cumulative: 0.067 avg rt, 0% failures
+[2018-09-05 12:36:24,799 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:24,800 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:24,844 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.053 avg rt	/	Cumulative: 0.067 avg rt, 0% failures
+[2018-09-05 12:36:25,800 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:25,801 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:25,821 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.061 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:26,801 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:26,801 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:26,824 INFO Engine.console] Current: 1 vu	20 succ	0 fail	0.052 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:27,802 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:27,803 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:27,839 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:28,803 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:28,804 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:28,843 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.063 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:29,804 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:29,805 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:29,846 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.058 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:30,805 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:30,806 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:30,846 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.055 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:31,806 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:31,807 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:31,828 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.071 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:32,807 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:32,808 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:32,829 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.061 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:33,809 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:33,809 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:33,850 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.063 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:34,810 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:34,810 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:34,854 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:35,811 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:35,811 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:35,837 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.067 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:36,812 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:36,812 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:36,849 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.058 avg rt	/	Cumulative: 0.066 avg rt, 0% failures
+[2018-09-05 12:36:37,813 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:37,813 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:37,821 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.058 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:38,814 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:38,814 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:38,847 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:39,814 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:39,814 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:39,824 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.075 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:40,814 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:40,815 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:40,836 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:41,815 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:41,816 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:41,838 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:42,816 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:42,817 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:42,826 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.061 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:43,817 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:43,818 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:43,832 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.065 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:44,818 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:44,819 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:44,856 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.056 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:45,819 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:45,819 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:45,842 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.060 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:46,820 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:46,821 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:46,854 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.056 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:47,821 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:47,822 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:47,864 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.065 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:48,822 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:48,822 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:48,833 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:49,823 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:49,823 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:49,845 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.061 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:50,824 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:50,824 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:50,852 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.058 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:51,825 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:51,825 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:51,836 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.065 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:52,826 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:52,826 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:52,845 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.055 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:53,827 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:53,827 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:53,844 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.067 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:54,828 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:54,828 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:54,845 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.057 avg rt	/	Cumulative: 0.065 avg rt, 0% failures
+[2018-09-05 12:36:55,829 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:55,829 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:55,846 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.056 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:36:56,830 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:56,830 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:56,850 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.060 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:36:57,831 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:57,831 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:57,850 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.050 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:36:58,832 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:58,832 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:58,842 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.068 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:36:59,833 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:36:59,833 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:36:59,854 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.054 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:37:00,834 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:00,834 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:00,845 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.056 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:37:01,835 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:01,835 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:01,854 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.055 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:37:02,836 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:02,837 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:02,871 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.057 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:37:03,837 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:03,837 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:03,850 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.057 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:37:04,838 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:04,838 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:04,862 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.052 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:37:05,839 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:05,839 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:05,878 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.059 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:37:06,839 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:06,840 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:06,848 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.058 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:37:07,840 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:07,841 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:07,880 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.064 avg rt, 0% failures
+[2018-09-05 12:37:08,841 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:08,842 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:08,864 INFO Engine.console] Current: 1 vu	20 succ	0 fail	0.050 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:09,843 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:09,843 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:09,888 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.066 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:10,844 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:10,844 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:10,858 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.060 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:11,845 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:11,845 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:11,886 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.065 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:12,846 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:12,846 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:12,885 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.056 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:13,846 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:13,847 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:13,888 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:14,847 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:14,847 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:14,858 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.056 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:15,848 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:15,848 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:15,889 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:16,849 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:16,849 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:16,860 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.053 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:17,850 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:17,850 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:17,892 INFO Engine.console] Current: 1 vu	14 succ	0 fail	0.068 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:18,851 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:18,851 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:18,861 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.058 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:19,852 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:19,853 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:19,893 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.057 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:20,853 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:20,854 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:20,900 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:21,854 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:21,855 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:21,889 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.065 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:22,858 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:22,858 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:22,884 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.049 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:23,859 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:23,859 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:23,871 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:24,860 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:24,860 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:24,883 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.060 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:25,861 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:25,861 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:25,871 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.061 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:26,862 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:26,862 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:26,878 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.058 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:27,863 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:27,863 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:27,883 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.055 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:28,864 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:28,864 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:28,885 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.061 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:29,865 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:29,865 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:29,888 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.056 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:30,866 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:30,866 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:30,877 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.061 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:31,867 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:31,867 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:31,888 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.052 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:32,868 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:32,868 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:32,894 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:33,869 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:33,870 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:33,904 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.057 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:34,870 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:34,870 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:34,888 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.057 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:35,871 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:35,871 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:35,891 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.057 avg rt	/	Cumulative: 0.063 avg rt, 0% failures
+[2018-09-05 12:37:36,872 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:36,872 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:36,895 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:37,873 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:37,874 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:37,909 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.060 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:38,874 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:38,874 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:38,885 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:39,875 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:39,876 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:39,906 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.054 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:40,876 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:40,877 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:40,917 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.068 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:41,877 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:41,878 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:41,918 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.054 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:42,878 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:42,878 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:42,888 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:43,879 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:43,880 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:43,902 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.056 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:44,880 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:44,881 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:44,914 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:45,881 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:45,882 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:45,895 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.062 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:46,882 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:46,883 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:46,923 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.061 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:47,883 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:47,884 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:47,895 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.057 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:48,884 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:48,884 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:48,900 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.058 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:49,885 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:49,885 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:49,924 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.061 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:50,886 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:50,887 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:50,925 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.058 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:51,887 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:51,887 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:51,898 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.065 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:52,887 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:52,888 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:52,919 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:53,888 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:53,889 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:53,898 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:54,889 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:54,889 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:54,904 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.065 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:55,891 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:55,891 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:55,924 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.068 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:56,892 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:56,892 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:56,924 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.053 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:57,893 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:57,893 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:57,936 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.064 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:58,894 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:58,894 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:58,918 INFO Engine.console] Current: 1 vu	20 succ	0 fail	0.053 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:37:59,894 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:37:59,894 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:37:59,910 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.053 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:00,895 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:00,896 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:00,939 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.062 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:01,896 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:01,896 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:01,909 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.062 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:02,896 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:02,896 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:02,911 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.060 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:03,897 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:03,897 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:03,938 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.061 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:04,898 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:04,898 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:04,909 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.056 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:05,899 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:05,899 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:05,928 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.058 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:06,900 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:06,900 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:06,914 INFO Engine.console] Current: 1 vu	20 succ	0 fail	0.050 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:07,901 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:07,902 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:07,939 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:08,901 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:08,901 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:08,912 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.056 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:09,902 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:09,903 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:09,944 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:10,903 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:10,903 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:10,912 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.058 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:11,904 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:11,904 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:11,941 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.064 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:12,905 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:12,905 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:12,916 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.059 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:13,906 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:13,906 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:13,928 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.058 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:14,907 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:14,907 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:14,934 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.067 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:15,908 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:15,909 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:15,952 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.051 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:16,909 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:16,910 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:16,941 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.065 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:17,910 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:17,910 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:17,945 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.057 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:18,910 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:18,910 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:18,920 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:19,911 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:19,911 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:19,930 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.056 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:20,912 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:20,912 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:20,921 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:21,913 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:21,913 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:21,940 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.056 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:22,914 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:22,914 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:22,926 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.060 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:23,915 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:23,915 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:23,938 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.060 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:24,916 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:24,916 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:24,926 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.061 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:25,917 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:25,917 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:25,934 INFO Engine.console] Current: 1 vu	20 succ	0 fail	0.052 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:26,919 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:26,919 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:26,956 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.060 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:27,919 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:27,920 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:27,929 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.061 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:28,920 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:28,921 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:28,953 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.055 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:29,921 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:29,922 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:29,931 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.058 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:30,922 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:30,922 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:30,938 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.058 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:31,924 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:31,924 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:31,962 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.053 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:32,924 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:32,925 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:32,935 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:33,925 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:33,926 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:33,960 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.066 avg rt	/	Cumulative: 0.062 avg rt, 0% failures
+[2018-09-05 12:38:34,926 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:34,927 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:34,966 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.048 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:35,927 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:35,928 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:35,971 INFO Engine.console] Current: 1 vu	15 succ	0 fail	0.067 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:36,928 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:36,929 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:36,958 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.052 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:37,929 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:37,929 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:37,945 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.061 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:38,930 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:38,931 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:38,966 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.060 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:39,931 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:39,932 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:39,976 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:40,932 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:40,932 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:40,942 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.057 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:41,933 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:41,933 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:41,960 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.057 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:42,934 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:42,934 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:42,942 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.056 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:43,935 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:43,935 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:43,950 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.054 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:44,936 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:44,936 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:44,952 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.057 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:45,937 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:45,937 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:45,955 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.061 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:46,938 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:46,938 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:46,955 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.055 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:47,939 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:47,940 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:47,958 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.048 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:48,940 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:48,940 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:48,950 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.059 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:49,941 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:49,942 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:49,986 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.060 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:50,942 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:50,943 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:50,958 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.053 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:51,943 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:51,944 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:51,960 INFO Engine.console] Current: 1 vu	20 succ	0 fail	0.051 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:52,945 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:52,945 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:52,962 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.058 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:53,945 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:53,946 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:53,964 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.060 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:54,947 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:54,947 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:54,957 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.066 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:55,948 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:55,948 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:55,962 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.053 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:56,949 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:56,949 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:56,987 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.058 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:57,950 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:57,950 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:57,959 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.049 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:58,951 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:58,951 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:58,971 INFO Engine.console] Current: 1 vu	18 succ	0 fail	0.062 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:38:59,952 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:38:59,952 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:38:59,972 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.054 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:00,953 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:00,953 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:00,987 INFO Engine.console] Current: 1 vu	20 succ	0 fail	0.056 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:01,954 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:01,955 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:01,991 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.054 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:02,955 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:02,955 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:02,965 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.055 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:03,956 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:03,956 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:03,998 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.058 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:04,957 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:04,957 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:04,980 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.054 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:05,958 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:05,959 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:05,997 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.070 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:06,959 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:06,959 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:06,973 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.052 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:07,960 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:07,961 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:08,022 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.058 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:08,961 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:08,962 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:08,975 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.064 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:09,963 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:09,963 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:09,995 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.055 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:10,964 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:10,964 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:11,001 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.071 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:11,965 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:11,965 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:11,977 INFO Engine.console] Current: 1 vu	20 succ	0 fail	0.052 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:12,966 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:12,966 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:13,002 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.062 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:13,967 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:13,967 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:13,989 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:14,968 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:14,968 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:15,009 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.063 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:15,969 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:15,969 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:16,012 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.066 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:16,970 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:16,970 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:16,998 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:17,970 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:17,970 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:17,988 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.059 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:18,971 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:18,972 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:19,000 INFO Engine.console] Current: 1 vu	16 succ	0 fail	0.065 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:19,972 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:19,972 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:19,983 INFO Engine.console] Current: 1 vu	19 succ	0 fail	0.054 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:20,973 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:20,973 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:21,002 INFO Engine.console] Current: 1 vu	13 succ	0 fail	0.069 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:21,974 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:21,974 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:21,989 INFO Engine.console] Current: 1 vu	20 succ	0 fail	0.053 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:22,974 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:22,975 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:23,976 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:23,976 INFO Engine.local] Starting next sequential execution: None/location-search-all
+[2018-09-05 12:39:23,978 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/4.0/bin/jmeter.sh', '-n', '-t', '/tmp/artifacts/modified_requests-1.jmx', '-j', '/tmp/artifacts/jmeter-1.log', '-q', '/tmp/artifacts/jmeter-bzt-1.properties', '-S', '/tmp/artifacts/system-1.properties'] at /bzt-configs
+[2018-09-05 12:39:24,339 DEBUG root] Leveling down log file verbosity to INFO, use -v option to have DEBUG messages enabled
+[2018-09-05 12:39:29,018 INFO Engine.console] Current: 1 vu	17 succ	0 fail	0.062 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:30,998 INFO Engine.console] Current: 1 vu	26 succ	0 fail	0.033 avg rt	/	Cumulative: 0.061 avg rt, 0% failures
+[2018-09-05 12:39:32,009 INFO Engine.console] Current: 1 vu	38 succ	0 fail	0.025 avg rt	/	Cumulative: 0.060 avg rt, 0% failures
+[2018-09-05 12:39:32,992 INFO Engine.console] Current: 1 vu	44 succ	0 fail	0.023 avg rt	/	Cumulative: 0.060 avg rt, 0% failures
+[2018-09-05 12:39:34,009 INFO Engine.console] Current: 1 vu	32 succ	0 fail	0.030 avg rt	/	Cumulative: 0.060 avg rt, 0% failures
+[2018-09-05 12:39:35,006 INFO Engine.console] Current: 1 vu	50 succ	0 fail	0.019 avg rt	/	Cumulative: 0.059 avg rt, 0% failures
+[2018-09-05 12:39:35,995 INFO Engine.console] Current: 1 vu	53 succ	0 fail	0.018 avg rt	/	Cumulative: 0.059 avg rt, 0% failures
+[2018-09-05 12:39:37,004 INFO Engine.console] Current: 1 vu	44 succ	0 fail	0.022 avg rt	/	Cumulative: 0.058 avg rt, 0% failures
+[2018-09-05 12:39:38,008 INFO Engine.console] Current: 1 vu	47 succ	0 fail	0.021 avg rt	/	Cumulative: 0.058 avg rt, 0% failures
+[2018-09-05 12:39:39,009 INFO Engine.console] Current: 1 vu	44 succ	0 fail	0.022 avg rt	/	Cumulative: 0.057 avg rt, 0% failures
+[2018-09-05 12:39:40,008 INFO Engine.console] Current: 1 vu	50 succ	0 fail	0.020 avg rt	/	Cumulative: 0.057 avg rt, 0% failures
+[2018-09-05 12:39:40,999 INFO Engine.console] Current: 1 vu	50 succ	0 fail	0.019 avg rt	/	Cumulative: 0.057 avg rt, 0% failures
+[2018-09-05 12:39:42,010 INFO Engine.console] Current: 1 vu	57 succ	0 fail	0.018 avg rt	/	Cumulative: 0.056 avg rt, 0% failures
+[2018-09-05 12:39:43,002 INFO Engine.console] Current: 1 vu	51 succ	0 fail	0.019 avg rt	/	Cumulative: 0.056 avg rt, 0% failures
+[2018-09-05 12:39:44,011 INFO Engine.console] Current: 1 vu	59 succ	0 fail	0.017 avg rt	/	Cumulative: 0.055 avg rt, 0% failures
+[2018-09-05 12:39:45,012 INFO Engine.console] Current: 1 vu	61 succ	0 fail	0.016 avg rt	/	Cumulative: 0.055 avg rt, 0% failures
+[2018-09-05 12:39:46,037 INFO Engine.console] Current: 1 vu	54 succ	0 fail	0.018 avg rt	/	Cumulative: 0.054 avg rt, 0% failures
+[2018-09-05 12:39:47,042 WARNING Engine] Please wait for graceful shutdown...
+[2018-09-05 12:39:47,043 DEBUG root] Leveled up log file verbosity
+[2018-09-05 12:39:47,043 INFO Engine] Shutting down...
+[2018-09-05 12:39:47,043 DEBUG Engine] Current stop reason: None
+[2018-09-05 12:39:47,043 DEBUG Engine.local] Shutdown None/location-update
+[2018-09-05 12:39:47,043 DEBUG Engine.local] Shutdown None/location-search-all
+[2018-09-05 12:39:47,045 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 12:39:47,076 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 12:39:47,077 INFO Engine] Post-processing...
+[2018-09-05 12:39:47,077 DEBUG Engine.local] Post-process None/location-update
+[2018-09-05 12:39:47,077 DEBUG Engine] Add existing artifact (move=True): /tmp/artifacts/modified_requests.jmx
+[2018-09-05 12:39:47,078 DEBUG Engine] No need to copy /tmp/artifacts/modified_requests.jmx
+[2018-09-05 12:39:47,078 DEBUG Engine.local] Post-process None/location-search-all
+[2018-09-05 12:39:47,078 DEBUG Engine] Add existing artifact (move=True): /tmp/artifacts/modified_requests-1.jmx
+[2018-09-05 12:39:47,078 DEBUG Engine] No need to copy /tmp/artifacts/modified_requests-1.jmx
+[2018-09-05 12:39:47,078 DEBUG Engine.jmeter.JTLErrorsReader.FileReader] Reading: /tmp/artifacts/error.jtl
+[2018-09-05 12:39:47,078 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader.FileReader] Reading: /tmp/artifacts/kpi.jtl
+[2018-09-05 12:39:47,078 DEBUG Engine.jmeter.JTLReader] Buffer len: 2; Known errors count: 0
+[2018-09-05 12:39:47,078 DEBUG Engine.jmeter.JTLReader] Aggregating: 1536151160
+[2018-09-05 12:39:47,081 DEBUG Engine.consolidator] Putting datapoint 1536151160 into 1536151182
+[2018-09-05 12:39:47,081 DEBUG Engine.jmeter.JTLReader] Aggregating: 1536151161
+[2018-09-05 12:39:47,084 DEBUG Engine.consolidator] Putting datapoint 1536151161 into 1536151182
+[2018-09-05 12:39:47,084 DEBUG Engine.jmeter.JTLErrorsReader.FileReader] Reading: /tmp/artifacts/error-1.jtl
+[2018-09-05 12:39:47,084 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader.FileReader] Reading: /tmp/artifacts/kpi-1.jtl
+[2018-09-05 12:39:47,084 DEBUG Engine.jmeter.JTLReader] Buffer len: 2; Known errors count: 0
+[2018-09-05 12:39:47,084 DEBUG Engine.jmeter.JTLReader] Aggregating: 1536151184
+[2018-09-05 12:39:47,087 DEBUG Engine.jmeter.JTLReader] Aggregating: 1536151185
+[2018-09-05 12:39:47,090 DEBUG Engine.consolidator] Consolidator buffer[4]: [1536151184, 1536151185, 1536151182, 1536151183]
+[2018-09-05 12:39:47,090 DEBUG Engine.consolidator] Merging into 1536151182
+[2018-09-05 12:39:47,091 DEBUG Engine.consolidator] Merging 1536151182
+[2018-09-05 12:39:47,091 DEBUG Engine.consolidator] Merging 1536151182
+[2018-09-05 12:39:47,092 DEBUG Engine.consolidator] Merging 1536151182
+[2018-09-05 12:39:47,096 DEBUG Engine.consolidator] Processed datapoint: 1536151182/None
+[2018-09-05 12:39:47,096 DEBUG Engine.consolidator] Merging into 1536151183
+[2018-09-05 12:39:47,096 DEBUG Engine.consolidator] Merging 1536151183
+[2018-09-05 12:39:47,098 DEBUG Engine.consolidator] Processed datapoint: 1536151183/None
+[2018-09-05 12:39:47,098 DEBUG Engine.consolidator] Merging into 1536151184
+[2018-09-05 12:39:47,098 DEBUG Engine.consolidator] Merging 1536151184
+[2018-09-05 12:39:47,100 DEBUG Engine.consolidator] Processed datapoint: 1536151184/None
+[2018-09-05 12:39:47,100 DEBUG Engine.consolidator] Merging into 1536151185
+[2018-09-05 12:39:47,100 DEBUG Engine.consolidator] Merging 1536151185
+[2018-09-05 12:39:47,102 DEBUG Engine.consolidator] Processed datapoint: 1536151185/None
+[2018-09-05 12:39:47,103 INFO Engine.final-stats] Test duration: 0:04:34
+[2018-09-05 12:39:47,103 INFO Engine.final-stats] Samples count: 5000, 0.00% failures
+[2018-09-05 12:39:47,104 INFO Engine.final-stats] Average times: total 0.052, latency 0.052, connect 0.000
+[2018-09-05 12:39:47,106 INFO Engine.final-stats] Percentiles:
++---------------+---------------+
+| Percentile, % | Resp. Time, s |
++---------------+---------------+
+|           0.0 |         0.002 |
+|          50.0 |         0.021 |
+|          90.0 |         0.107 |
+|          95.0 |         0.174 |
+|          99.0 |         0.195 |
+|          99.9 |         0.276 |
+|         100.0 |         2.725 |
++---------------+---------------+
+[2018-09-05 12:39:47,107 INFO Engine.final-stats] Request label stats:
++----------------------------+--------+---------+--------+-------+
+| label                      | status |    succ | avg_rt | error |
++----------------------------+--------+---------+--------+-------+
+| CreateLocation             |   OK   | 100.00% |  0.105 |       |
+| GetSingleLocation          |   OK   | 100.00% |  0.006 |       |
+| SearchLocation             |   OK   | 100.00% |  0.019 |       |
+| SearchLocationByIdentifier |   OK   | 100.00% |  0.017 |       |
+| UpdateLocation             |   OK   | 100.00% |  0.115 |       |
++----------------------------+--------+---------+--------+-------+
+[2018-09-05 12:39:47,107 DEBUG Engine.console] No logger_handler or orig_stream was detected
+[2018-09-05 12:39:47,107 INFO Engine.final-stats] Test duration: 0:04:34
+[2018-09-05 12:39:47,107 INFO Engine.final-stats] Samples count: 5000, 0.00% failures
+[2018-09-05 12:39:47,107 INFO Engine.final-stats] Average times: total 0.052, latency 0.052, connect 0.000
+[2018-09-05 12:39:47,108 INFO Engine.final-stats] Percentiles:
++---------------+---------------+
+| Percentile, % | Resp. Time, s |
++---------------+---------------+
+|           0.0 |         0.002 |
+|          50.0 |         0.021 |
+|          90.0 |         0.107 |
+|          95.0 |         0.174 |
+|          99.0 |         0.195 |
+|          99.9 |         0.276 |
+|         100.0 |         2.725 |
++---------------+---------------+
+[2018-09-05 12:39:47,109 INFO Engine.final-stats] Request label stats:
++----------------------------+--------+---------+--------+-------+
+| label                      | status |    succ | avg_rt | error |
++----------------------------+--------+---------+--------+-------+
+| CreateLocation             |   OK   | 100.00% |  0.105 |       |
+| GetSingleLocation          |   OK   | 100.00% |  0.006 |       |
+| SearchLocation             |   OK   | 100.00% |  0.019 |       |
+| SearchLocationByIdentifier |   OK   | 100.00% |  0.017 |       |
+| UpdateLocation             |   OK   | 100.00% |  0.115 |       |
++----------------------------+--------+---------+--------+-------+
+[2018-09-05 12:39:47,109 INFO Engine.final-stats] Dumping final status as XML: /tmp/artifacts/stats.xml
+[2018-09-05 12:39:47,147 DEBUG root] 1536151185 Alert: failures>0% for -9223372036854775806 sec: False
+[2018-09-05 12:39:47,149 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-09-05 12:39:47,178 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-09-05 12:39:47,179 INFO root] Artifacts dir: /tmp/artifacts
+[2018-09-05 12:39:47,179 INFO root] Done performing with code: 0
+[2018-09-05 12:39:47,179 DEBUG root] Closing log handler: /tmp/artifacts/bzt.log
